@@ -1,0 +1,302 @@
+/* ===== Reset / Box-Sizing ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ===== Body and Font ===== */
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+  }
+  
+  /* ===== Navigation Bar ===== */
+  .navbar {
+    background-color: #24292e;
+    padding: 0.5rem;
+  }
+  .nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-logo {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .menu-toggle {
+    display: none; /* hidden on desktop by default */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  .nav-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: background-color 0.2s ease;
+  }
+  .nav-menu li a:hover {
+    background-color: #444;
+    border-radius: 4px;
+  }
+  .nav-menu li a.active {
+    text-decoration: underline;
+  }
+  
+  /* ===== Hero Section ===== */
+  .hero {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+  .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* ===== Buttons ===== */
+  .btn {
+    background-color: #e36209;
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  .btn:hover {
+    background-color: #d95407;
+  }
+  .btn-link {
+    margin-left: 1rem;
+    text-decoration: underline;
+    color: #24292e;
+  }
+  .btn-link:hover {
+    color: #e36209;
+  }
+  
+  /* ===== Main Content ===== */
+  main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+  }
+/* Center the main/page-content on every page */
+.page-content, main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+  }
+  
+  section {
+    margin-bottom: 3rem;
+  }
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* ===== Team Page ===== */
+  .team-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .team-member {
+    flex: 1 1 300px;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+/* Container of team members */
+.team-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center; /* center all cards in the container */
+  }
+  
+  /* Individual team member “card” */
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  
+    /* Remove these to eliminate the 'box' appearance */
+    border: none;
+    background-color: transparent;
+    padding: 0; /* or a very small value if you still want a little spacing */
+  
+    /* You can keep margin: 0.5rem if you want some space between members */
+    margin: 0.5rem;
+  }
+  
+  .team-photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.0rem;
+  }  
+  
+  
+  /* ===== Contact Form ===== */
+  .contact-form {
+    max-width: 400px;
+  }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+  }
+  .contact-form button {
+    background-color: #e36209;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  .contact-form button:hover {
+    background-color: #d95407;
+  }
+  
+  /* ===== Footer ===== */
+  .footer {
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+  }
+  .footer-content p {
+    margin: 0.5rem 0;
+  }
+  .footer-content a {
+    color: #24292e;
+    text-decoration: none;
+  }
+  .footer-content a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ===== Publications & Carousel ===== */
+  .publication {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2rem;
+  }
+  .publication h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .publication p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Carousel container */
+  .video-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 1rem auto;
+    overflow: hidden; /* hides off-screen slides */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fafafa;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  /* Each slide is full width of carousel container */
+  .carousel-slide {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  /* Video styling */
+  .carousel-slide video {
+    max-width: 100%;
+    max-height: 400px;
+    background: #000; /* fallback background */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Carousel Buttons */
+  .carousel-nav {
+    text-align: center;
+    padding: 1rem 0;
+  }
+  .carousel-button {
+    background-color: #e36209;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .carousel-button:hover {
+    background-color: #d95407;
+  }
+  
+  /* ===== Responsive Media Queries ===== */
+  @media (max-width: 768px) {
+    .nav-menu {
+      display: none; 
+      flex-direction: column;
+      gap: 0;
+      background-color: #24292e;
+      margin-top: 1rem;
+      padding: 1rem;
+    }
+    .nav-menu li {
+      margin-bottom: 1rem;
+    }
+    .menu-toggle {
+      display: block; 
+    }
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .carousel-slide video {
+      max-height: 220px;
+    }
+  }
+  

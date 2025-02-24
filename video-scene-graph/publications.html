@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Publications - Video Scene Graph Generation</title>
+
+  <!-- Your main CSS file (optional if you already have one) -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Favicon (PNG) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/UA_Logo.png" />
+</head>
+<body>
+  <!-- ===== Navigation (sample) ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Video Scene Graph Generation</a>
+      <button class="menu-toggle" id="mobile-menu-toggle">Menu</button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="publications.html" class="active">Publications</a></li>
+        <li><a href="team.html">Team</a></li>
+        <!-- Add more nav links as needed -->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== Main Content ===== -->
+  <main class="page-content">
+
+    <!-- ====== Publication 1: HIG ====== -->
+    <div class="publication">
+      <h2>HIG: Hierarchical Interlacement Graph Approach to Scene Graph Generation in Video Understanding</h2>
+      <p><em>CVPR 2024</em></p>
+      <p><strong>Authors:</strong> Trong-Thuan Nguyen, Pha Nguyen, Khoa Luu</p>
+      <p>
+        <strong>Abstract:</strong>  
+        Visual interactivity understanding within visual scenes presents a significant challenge in computer vision. Existing methods focus on complex interactivities while leveraging a simple relationship model. These methods, however, struggle with a diversity of appearance, situation, position, interaction, and relation in videos. This limitation hinders the ability to fully comprehend the interplay within the complex visual dynamics of subjects. In this paper, we delve into interactivities understanding within visual content by deriving scene graph representations from dense interactivities among humans and objects. To achieve this goal, we first present a new dataset containing Appearance-Situation-Position-Interaction-Relation predicates, named ASPIRe, offering an extensive collection of videos marked by a wide range of interactivities. Then, we propose a new approach named Hierarchical Interlacement Graph (HIG), which leverages a unified layer and graph within a hierarchical structure to provide deep insights into scene changes across five distinct tasks. Our approach demonstrates superior performance to other methods through extensive experiments conducted in various scenarios.
+      </p>
+      <p>
+        <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Nguyen_HIG_Hierarchical_Interlacement_Graph_Approach_to_Scene_Graph_Generation_in_CVPR_2024_paper.pdf" 
+           target="_blank">[PDF]</a>
+        <a href="https://uark-cviu.github.io/ASPIRe/" target="_blank">[Project Page]</a>
+      </p>
+
+      <!-- Carousel Container (Publication 1) -->
+      <div class="video-carousel" id="carousel1">
+        <div class="carousel-track" id="track1">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <video controls>
+              <source src="assets/videos/hig/predict-basketball.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <video controls>
+              <source src="assets/videos/hig/predict-boy.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-slide">
+            <video controls>
+              <source src="assets/videos/hig/predict-girl.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <!-- Slide 4 -->
+          <div class="carousel-slide">
+            <video controls>
+              <source src="assets/videos/hig/predict-umbrella.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div> <!-- /End track1 -->
+
+        <div class="carousel-nav">
+          <button class="carousel-button" id="prevBtn1">Prev</button>
+          <button class="carousel-button" id="nextBtn1">Next</button>
+        </div>
+      </div>
+      <!-- /End Carousel 1 -->
+    </div>
+
+    <!-- ====== Publication 2: CYCLO ====== -->
+    <div class="publication">
+      <h2>CYCLO: Cyclic Graph Transformer Approach to Multi-Object Relationship Modeling in Aerial Videos</h2>
+      <p><em>NeurIPS 2024</em></p>
+      <p><strong>Authors:</strong> Trong-Thuan Nguyen, Pha Nguyen, Xin Li, Jackson Cothren, Alper Yilmaz, Khoa Luu</p>
+      <p>
+        <strong>Abstract:</strong>  
+        Video scene graph generation (VidSGG) has emerged as a transformative approach to capturing and interpreting the intricate relationships among objects and their temporal dynamics in video sequences. In this paper, we introduce the new AeroEye dataset that focuses on multi-object relationship modeling in aerial videos. Our AeroEye dataset features various drone scenes and includes a visually comprehensive and precise collection of predicates that capture the intricate relationships and spatial arrangements among objects. To this end, we propose the novel Cyclic Graph Transformer (CYCLO) approach that allows the model to capture both direct and long-range temporal dependencies by continuously updating the history of interactions in a circular manner. The proposed approach also allows one to handle sequences with inherent cyclical patterns and process object relationships in the correct sequential order. Therefore, it can effectively capture periodic and overlapping relationships while minimizing information loss. The extensive experiments on the AeroEye dataset demonstrate the effectiveness of the proposed CYCLO model, demonstrating its potential to perform scene understanding on drone videos. Finally, the CYCLO method consistently achieves State-of-the-Art (SOTA) results on two in-the-wild scene graph generation benchmarks, i.e., PVSG and ASPIRe.
+      </p>
+      <p>
+        <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/a467e68e57e9645f83a682fb33645f45-Paper-Conference.pdf" 
+           target="_blank">[PDF]</a>
+        <a href="https://uark-cviu.github.io/projects/CYCLO/" target="_blank">[Project Page]</a>
+      </p>
+
+      <!-- Carousel Container (Publication 2) -->
+      <div class="video-carousel" id="carousel2">
+        <div class="carousel-track" id="track2">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <video controls>
+              <source src="assets/videos/cyclo/Cycling_005.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <video controls>
+              <source src="assets/videos/cyclo/Constructing_007.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-slide">
+            <video controls>
+              <source src="assets/videos/cyclo/PoliceChase_002.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <!-- Slide 4 -->
+          <div class="carousel-slide">
+            <video controls>
+              <source src="assets/videos/cyclo/Soccer_054.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <!-- Slide 5 -->
+          <div class="carousel-slide">
+            <video controls>
+              <source src="assets/videos/cyclo/Constructing_058.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div> <!-- /End track2 -->
+
+        <div class="carousel-nav">
+          <button class="carousel-button" id="prevBtn2">Prev</button>
+          <button class="carousel-button" id="nextBtn2">Next</button>
+        </div>
+      </div>
+      <!-- /End Carousel 2 -->
+    </div>
+
+    <!-- ====== Publication 3: HyperGLM ====== -->
+    <div class="publication">
+      <h2>HyperGLM: HyperGraph for Video Scene Graph Generation and Anticipation</h2>
+      <p><em>arXiv 2025</em></p>
+      <p><strong>Authors:</strong> Trong-Thuan Nguyen, Pha Nguyen, Jackson Cothren, Alper Yilmaz, Khoa Luu</p>
+      <p>
+        <strong>Abstract:</strong>  
+        Multimodal LLMs have advanced vision-language tasks but still struggle with understanding video scenes. To bridge this gap, Video Scene Graph Generation (VidSGG) has emerged to capture multi-object relationships across video frames. However, prior methods rely on pairwise connections, limiting their ability to handle complex multi-object interactions and reasoning. To this end, we propose Multimodal LLMs on a Scene HyperGraph (HyperGLM), promoting reasoning about multi-way interactions and higher-order relationships. Our approach uniquely integrates entity scene graphs, which capture spatial relationships between objects, with a procedural graph that models their causal transitions, forming a unified HyperGraph. Significantly, HyperGLM enables reasoning by injecting this unified HyperGraph into LLMs. Additionally, we introduce a new Video Scene Graph Reasoning (VSGR) dataset featuring 1.9M frames from third-person, egocentric, and drone views and supports five tasks: Scene Graph Generation, Scene Graph Anticipation, Video Question Answering, Video Captioning, and Relation Reasoning. Empirically, HyperGLM consistently outperforms state-of-the-art methods across five tasks, effectively modeling and reasoning complex relationships in diverse video scenes.
+      </p>
+      <p>
+        <a href="https://arxiv.org/pdf/2411.18042" target="_blank">[PDF]</a>
+        <!-- <a href="#" target="_blank">[Project Page]</a> -->
+      </p>
+
+      <!-- Carousel Container (Publication 3) -->
+      <!-- IMPORTANT: Unique IDs for pub 3 -->
+      <div class="video-carousel" id="carousel3">
+        <div class="carousel-track" id="track3">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <video controls>
+              <source src="assets/videos/hyperglm/boy.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <video controls>
+              <source src="assets/videos/hyperglm/girl.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div> <!-- /End track3 -->
+
+        <div class="carousel-nav">
+          <button class="carousel-button" id="prevBtn3">Prev</button>
+          <button class="carousel-button" id="nextBtn3">Next</button>
+        </div>
+      </div>
+      <!-- /End Carousel 3 -->
+    </div>
+    <!-- Add more publications if needed... -->
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; <a href="https://uark-cviu.github.io/" target="_blank">CVIU Lab 2025</a></p>
+    </div>
+  </footer>
+
+  <!-- JavaScript carousel logic -->
+  <script src="js/main.js"></script>
+</body>
+</html>
