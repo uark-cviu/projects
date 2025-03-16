@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LonGan</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="static/images/UA_Logo.png">
+  
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Google Analytics -->
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-825ET94Y3E');
+  </script>
+  
+  <!-- JavaScript Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+  
+<body>
+  <section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">LONGAN: Long-tailed Learning Approaches to Domain Adaptation, Continual Learning, and Generalization in Semantic Segmentation</h1>
+                    <div class="is-size-5 publication-authors">
+                      <!-- Paper authors -->
+                      <span class="author-block">
+                      <a href="" target="_blank">Thanh-Dat Truong<sup>1</sup></a>,</span>
+                      <a href="" target="_blank">Huu-Thien Tran<sup>1</sup></a>,</span>
+                      <a href="" target="_blank">Chi Nhan Duong<sup>2</sup></a>,</span>
+                      <a href="" target="_blank">Ashley Dowling<sup>3</sup></a>,</span>
+                      <a href="" target="_blank">Xin Li<sup>4</sup></a>,</span>
+                      <a href="" target="_blank">Bhiksha Raj<sup>5</sup></a>,</span>
+                      <a href="" target="_blank">Khoa Luu<sup>1</sup></a></span>
+                      </span>
+                  </div>
+                  <div class="is-size-5 publication-authors">
+                      <span class="author-block">
+                        <sup>1</sup>CVIU Lab, University of Arkansas&nbsp;&nbsp;&nbsp;&nbsp;
+                        <sup>2</sup>pdActive Inc.&nbsp;&nbsp;&nbsp;&nbsp;
+                        <sup>3</sup>Dep. of ENPL, University of Arkansas&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                        <sup>4</sup>Dep. of Computer Science, SUNY Albany&nbsp;&nbsp;&nbsp;&nbsp;
+                        <sup>5</sup>Carnegie Mellon University&nbsp;&nbsp;&nbsp;&nbsp;
+                      </span>
+                      <br>
+                  </div>
+                  
+                    <!-- Publication Links -->
+                    <div class="publication-links">
+                        <!-- ArXiv abstract Link -->
+                        <span class="link-block">
+                            <a href="https://github.com/uark-cviu/projects/tree/main/LonGan" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                <span class="icon">
+                                    <i class="fab fa-github"></i>
+                                </span>
+                                <span>Code</span>
+                            </a>
+                        </span>
+                        
+                    </div>
+                    <!-- Video Container -->
+                    <div class="video-container">
+                      <video autoplay muted loop playsinline>
+                          <source src="static/videos/teaser-video-v2.mp4" type="video/mp4">
+                      </video>
+                      
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Paper motivation -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Highlights</h2>
+        <div class="content has-text-justified">
+          <p>
+            <ul>
+            <li>A new metric for long-tail semantic segmentation is formulated, incorporating multiple predictions per image and structural learning via a Conditional Maximum Likelihood loss.</li>
+
+            <li>The Bijective Maximum Likelihood (BiMaL) loss is introduced to model global segmentation structures and map them to a deep latent space, addressing the long-tail problem in unsupervised domain adaptation.</li>
+
+            <li>A Long-tailed-aware Contrastive Clustering Approach for Continual Semantic Segmentation is developed, featuring a Prototypical Contrastive Clustering loss to mitigate catastrophic forgetting, background shift, and class imbalance.</li>
+
+            <li>A Long-tailed-aware Domain Generalization Approach is proposed, leveraging Adversarial Style Learning to improve segmentation model robustness under distribution shifts and imbalanced data.</li>
+            </ul>
+            <figure>
+              <!-- <figcaption class="content has-text-left" style="word-break:normal"> Comparisons with Domain Adaptation Approaches. -->
+              <img src="static/images/uda-css-dg-data-miou.jpg" alt="fail" width="100%">
+            </figure>
+          </p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+            <p>
+              The research of unsupervised domain adaptation, continual learning, and domain generalization in semantic segmentation
+              has received considerable attention. However, the long-tailed problem in these three learning tasks has not been
+              aggressively investigated. Therefore, in this paper, we propose a novel long-tailed learning (LONGAN) framework that can
+              generalize to unsupervised domain adaptation, continual learning, and domain generalization tasks. First, in order to
+              address the long-tailed issue caused by imbalanced data, a new metric is introduced to formulate a long-tail learning
+              framework in the segmentation problem. Then, the metric is further derived into Class Balancing Objective and
+              Conditional Structure Modeling to address the long-tail problem. Although other segmentation methods work under the
+              pixel independence assumption, our proposed long-tailed pixel distributions in CoMaL are generally solved in the context
+              of structural dependency, as that is more realistic. Second, we propose three novel approaches of Bijective Maximum
+              Likelihood, Prototypical Contrastive Clustering, and Adversarial Style Learning, each is incorporated with our
+              long-tailed learning framework. These methods then address the long-tailed problems in unsupervised domain adaptation,
+              continual learning, and domain generalization. Finally, our proposed approach is evaluated on different benchmarks of
+              unsupervised domain adaptation, continual learning, and domain generalization, and outperforms prior methods by a large
+              margin in all evaluation protocols.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Results</h2>
+
+        <figure>
+          <figcaption class="content has-text-left" style="word-break:normal">
+            Qualitative Results. We compare our results, i.e., BiMaL, LonGan with the ResNet-101 backbone, and LonGan with the Transformer backbone, with 
+            AdvEnt, SAC, (a) SYNTHIA to Cityscapes and (b) \textbfGTA5 to Cityscapes 
+          <img src="static/images/visualization_syn_gta_city-v2.jpg" alt="fail" width="100%">
+        </figure>
+
+        <figure>
+          <figcaption class="content has-text-left" style="word-break:normal">
+            Qualitative Results of Long-tail Classes We highlight the long-tail class (i.e., traffic sign) and compare the results of
+            AdvEnt, SAC , BiMaL, LonGan with the DeepLab backbone, and LonGan with the Transformer backbone.
+          <img src="static/images/highlights_gta2city2-v2.jpg" alt="fail" width="100%">
+        </figure>
+
+        <figure>
+          <figcaption class="content has-text-left" style="word-break:normal">
+            Qualitative Results of Our Approach and PLOP on Cityscapes 11-5.
+            The red and green boxes highlight the significant differences between our approach and PLOP.
+          <img src="static/images/css-cityscapes-visualization.jpg" alt="fail" width="100%">
+        </figure>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">Experimental Results</h2>
+
+        <div class="content has-text-left is-size-5">
+        <center>
+        <strong>Unsupervised Domain Adaptation</strong>
+        </center>
+        </div>
+        
+        <figure>
+            <!-- <figcaption class="content has-text-left" style="word-break:normal"> Comparisons with Domain Adaptation Approaches. -->
+            <img src="static/images/uda-results.png" alt="fail" width="100%">
+        </figure>
+
+        <br>
+
+        <div class="content has-text-left is-size-5">
+          <center>
+          <strong>Continual Semantic Segmentation</strong>
+          </center>
+        </div>
+
+        <figure>
+          <!-- <figcaption class="content has-text-left" style="word-break:normal"> Comparisons with Domain Adaptation Approaches. -->
+          <img src="static/images/css-performance.png" alt="fail" width="100%">
+        </figure>
+        
+        <br>
+
+        <div class="content has-text-left is-size-5">
+          <center>
+          <strong>Domain Generalization</strong>
+          </center>
+        </div>
+
+        <figure>
+          <!-- <figcaption class="content has-text-left" style="word-break:normal"> Comparisons with Domain Adaptation Approaches. -->
+          <img src="static/images/dg-performance.png" alt="fail" width="100%">
+        </figure>
+        
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">BibTex</h2>
+    <pre><code>@article{truong2025longan,
+      title={LONGAN: Long-tailed Learning Approaches to Domain Adaptation, Continual Learning, and Generalization in Semantic Segmentation},
+      author={Thanh-Dat Truong and Huu-Thien Tran and Chi Nhan Duong and Ashley Dowling and Xin Li and Bhiksha Raj and Khoa Luu},
+      journal={Under Review of TPAMI},
+      year={2025}
+    }
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <center>
+          <p>
+            This project template was adopted from <a href="https://nerfies.github.io" target="_blank">Nerfies</a>.
+          </p>
+        </center>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- Initialize Slick Carousel -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let currentVideoIndex = 0;
+        const videos = document.querySelectorAll('.videos video');
+        const totalVideos = videos.length;
+
+        document.getElementById('prevBtn').addEventListener('click', function() {
+            changeVideo(-1);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', function() {
+            changeVideo(1);
+        });
+
+        document.querySelectorAll('.img-zoom').forEach(img => {
+            img.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+
+        function changeVideo(direction) {
+            videos[currentVideoIndex].style.display = 'none';
+            currentVideoIndex = (currentVideoIndex + direction + totalVideos) % totalVideos;
+            videos[currentVideoIndex].style.display = 'block';
+        }
+
+        function openModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        var span = document.getElementsByClassName("close")[0];
+        if (span) {
+            span.onclick = function() { 
+                var modal = document.getElementById("myModal");
+                modal.style.display = "none";
+            }
+        }
+    });
+  </script>
+</body>
+</html>
