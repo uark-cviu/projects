@@ -13,6 +13,7 @@ The research of unsupervised domain adaptation, continual learning, and domain g
 
 ## Preliminary Work 
 
+<<<<<<< HEAD
 > [BiMaL: Bijective Maximum Likelihood Approach to Domain Adaptation in Semantic Scene Segmentation](https://arxiv.org/abs/2108.03267)
 > ICCV, 2021
 > Thanh-Dat Truong, Chi Nhan Duong, Ngan Le, Son Lam Phung, Chase Rainwater, and Khoa Luu
@@ -20,6 +21,15 @@ The research of unsupervised domain adaptation, continual learning, and domain g
 
 > [Fairness Continual Learning Approach to Semantic Scene Understanding in Open-World Environments](https://arxiv.org/abs/2305.15700)
 > NeurIPS, 2024
+=======
+> [BiMaL: Bijective Maximum Likelihood Approach to Domain Adaptation in Semantic Scene Segmentation](https://arxiv.org/abs/2108.03267)<br>
+> ICCV, 2021<br>
+> Thanh-Dat Truong, Chi Nhan Duong, Ngan Le, Son Lam Phung, Chase Rainwater, and Khoa Luu
+
+
+> [Fairness Continual Learning Approach to Semantic Scene Understanding in Open-World Environments](https://arxiv.org/abs/2305.15700)<br>
+> NeurIPS, 2024<br>
+>>>>>>> 7ae171cee6a18813c2944c03939cf42626948af5
 > Thanh-Dat Truong, Hoang-Quan Nguyen, Bhiksha Raj, and Khoa Luu
 
 ## Citation
