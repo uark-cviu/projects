@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyperGLM</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="static/images/UA_Logo.png">
+  
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Google Analytics -->
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-825ET94Y3E');
+  </script>
+  
+  <!-- JavaScript Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+  
+<body>
+  <section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">HyperGLM: HyperGraph for Video Scene Graph Generation and Anticipation</h1>
+                    <div class="is-size-5 publication-authors">
+                      <!-- Paper authors -->
+                      <span class="author-block">
+                      <a href="https://scholar.google.com/citations?user=ty0Njf0AAAAJ&hl=vi&authuser=1/" target="_blank"> Trong-Thuan Nguyen<sup>1</sup></a>,</span>
+                      <a href="https://pha-nguyen.github.io/" target="_blank"> Pha Nguyen<sup>1</sup></a>,</span>
+                      <a href="https://scholar.google.com/citations?user=_WB9fo4AAAAJ&hl=vi&oi=ao" target="_blank"> Jackson Cothren<sup>1</sup></a>,</span>
+                      <a href="https://scholar.google.com/citations?user=MeQC1XYAAAAJ&hl=vi&oi=ao" target="_blank"> Alper Yilmaz<sup>2</sup></a>,</span>
+                      <a href="https://scholar.google.com/citations?user=JPAl8-gAAAAJ" target="_blank"> Khoa Luu<sup>1</sup></a></span>
+                      </span>
+                  </div>
+                  <div class="is-size-5 publication-authors">
+                      <span class="author-block">
+                        <sup>1 </sup>University of Arkansas&nbsp;&nbsp;&nbsp;&nbsp;
+                        <sup>2 </sup>Ohio State University&nbsp;&nbsp;&nbsp;&nbsp;
+                      </span>
+                      <br>
+                  </div>
+                  <p style="color:#000; font-weight:bold; font-size:1.5em;" class="text-center">🎉 <strong>Accepted to CVPR 2025</strong> 🎉</p>
+                    <!-- Publication Links -->
+                    <div class="publication-links">
+                        <!-- ArXiv abstract Link -->
+                        <span class="link-block">
+                            <a href="https://arxiv.org/abs/2411.18042" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                <span class="icon">
+                                    <i class="ai ai-arxiv"></i>
+                                </span>
+                                <span>arXiv</span>
+                            </a>
+                        </span>
+                        <span class="link-block">
+                            <a href="#annotations" target="_self" class="external-link button is-normal is-rounded is-dark">
+                                <span class="icon">
+                                    <i class="fas fa-download"></i>
+                                </span>
+                                <span>Dataset</span>
+                            </a>
+                        </span>
+                    </div>
+                  <!-- Video Container -->
+                  <div class="video-container">
+                    <div id="first-video-slider">
+                      <video class="first-video" src="static/videos/teaser-1.mp4" type="video/mp4" autoplay muted loop playsinline></video>
+                      <video class="first-video" src="static/videos/teaser-2.mp4" type="video/mp4" autoplay muted loop playsinline style="display: none;"></video>
+                    </div>
+                    <div class="video-navigation">
+                      <button id="prevFirstVideo"><i class="fas fa-arrow-circle-left"></i> Previous</button>
+                      <button id="nextFirstVideo">Next <i class="fas fa-arrow-circle-right"></i></button>
+                    </div>
+                    <p class="caption"><strong>Our Scene HyperGraph-based reasoning apporach enhances Multimodal LLMs for Video Scene Graph Generation, enabling higher-order reasoning and multi-way interaction modeling in videos.</strong></p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Paper motivation -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Highlights</h2>
+        <div class="content has-text-justified">
+          <p>
+            <ul>
+              <li>Proposes a unified Scene HyperGraph that integrates spatial relationships (entity scene graphs) and causal transitions (procedural graphs), enabling higher-order reasoning beyond pairwise connections in Multimodal LLMs for improved Video Scene Graph Generation (VidSGG).</li>
+              <li>Introduces the Video Scene Graph Reasoning (VSGR) dataset with 1.9M frames from third-person, egocentric, and drone views, supporting five key tasks (Scene Graph Generation, Scene Graph Anticipation, Video Question Answering, Video Captioning, and Relation Reasoning).</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+            <p> Multimodal LLMs have advanced vision-language tasks but still struggle with understanding video scenes. 
+              To bridge this gap, Video Scene Graph Generation (VidSGG) has emerged to capture multi-object relationships across video frames. 
+              However, prior methods rely on pairwise connections, limiting their ability to handle complex multi-object interactions and reasoning. 
+              To this end, we propose Multimodal LLMs on a Scene HyperGraph (HyperGLM), promoting reasoning about multi-way interactions and higher-order relationships. 
+              Our approach uniquely integrates entity scene graphs, which capture spatial relationships between objects, with a procedural graph that models their causal transitions, forming a unified HyperGraph. 
+              Significantly, HyperGLM enables reasoning by injecting this unified HyperGraph into LLMs. Additionally, we introduce a new Video Scene Graph Reasoning (VSGR) dataset featuring 1.9M frames from third-person, egocentric, and drone views and supports five tasks: Scene Graph Generation, Scene Graph Anticipation, Video Question Answering, Video Captioning, and Relation Reasoning. Empirically, HyperGLM consistently outperforms state-of-the-art methods across five tasks, effectively modeling and reasoning complex relationships in diverse video scenes.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Our Approach</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="content has-text-justified">
+
+            <!-- Figures Side by Side -->
+            <div class="columns is-centered is-variable is-8">
+                <figure class="figure-container">
+                  <img src="static/images/hyperGLM.png" alt="HyperGLM Framework" class="figure-img">
+                  <!-- <figcaption class="caption">
+                    Our HyperGLM framework.
+                  </figcaption> -->
+                </figure>
+              <!-- First Figure -->
+              <!-- <div class="column is-half">
+                <figure class="figure-container">
+                  <img src="static/images/concepts.png" alt="HyperGLM Architecture" class="figure-img">
+                  <figcaption class="caption">
+                    (a) A simple approach for modeling temporal transition involves using two scene graphs: 
+                    <strong>G<sub>t</sub></strong> and <strong>G<sub>t+1</sub></strong>.  
+                    (b) Another procedure graph can represent this temporal modeling.  
+                    (c) Our unified HyperGraph integrates both the <span class="blue">entity scene graph</span> for capturing spatial relationships 
+                    and the <span class="green">procedural graph</span> for modeling temporal evolution.
+                  </figcaption>
+                </figure>
+              </div> -->
+
+              <!-- Second Figure -->
+              <!-- <div class="column is-half">
+                <figure class="figure-container">
+                  <img src="static/images/hyperGLM.png" alt="HyperGLM Framework" class="figure-img">
+                  <figcaption class="caption">
+                    Our HyperGLM framework.
+                  </figcaption>
+                </figure>
+              </div>
+
+            </div> End of Columns -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section", id="annotations">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">The VSGR Dataset</h2>
+        <div class="content has-text-justified">
+          VSGR includes videos and annotations leveraged for Scene Graph Generation and Scene Graph Anticipation from the <a href='https://uark-cviu.github.io/ASPIRe/'>ASPIRe</a> and <a href='https://uark-cviu.github.io/projects/CYCLO/'>AeroEye</a> datasets, along with additional annotations for tasks such as Video Question Answering, Video Captioning, and Relation Reasoning.
+          <ul>
+            <li>ASPIRe: <a href='https://drive.google.com/file/d/182brbAWQrDS-RyousE_piiCVbaj9WAqB/view?usp=sharing'>Training</a>, <a href='https://drive.google.com/file/d/1rAUTKkjy_Bm4p759PON9ze-2BlNIR2GD/view?usp=sharing'>Testing</a></li>
+            <li>AeroEye: <a href='https://drive.google.com/file/d/1Sm_Efg7Jxc8i4a7V883AQTPwdWgVUg9Q/view?usp=sharing'>Training</a>, <a href='https://drive.google.com/file/d/1j3UgrEA8gwIPtrWaYVH0gL2DePcn27Qs/view?usp=sharing'>Testing</a></li>
+      </div>
+        <div class="columns">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><span class="number">3.7K</span><span class="text"> videos</span></th>
+                        <th><span class="number">1.9M</span><span class="text"> frames</span></th>
+                        <th><span class="number">61.1K</span><span class="text"> reasoning tasks</span></th>
+                    </tr>
+                </thead>
+            </table>
+        </div> 
+        <div class="column">
+          <img src="static/images/compare.png" style="display: block; margin-left: auto; margin-right: auto" />
+      </div>  
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-small is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">Experimental Results</h2>
+
+        <div class="content has-text-left is-size-5">
+        <strong>Comparison (%) on VSGR and PVSG for the Scene
+          Graph Generation.</strong>
+        </div>
+        <figure>
+            <img src="static/images/sgg.png" alt="fail" width="100%">
+        </figure>
+
+        <div class="content has-text-left is-size-5">
+          <strong>Comparison (%) on VSGR and Action Genome for the Scene
+            Graph Anticipation.</strong>
+          </div>
+          <figure>
+              <img src="static/images/sga.png" alt="fail" width="100%">
+          </figure>
+
+          <div class="content has-text-left is-size-5">
+            <strong>Comparison (%) on VSGR for the Video Question Answering.</strong>
+            </div>
+            <figure>
+                <img src="static/images/vqa.png" alt="fail" width="100%">
+            </figure>
+
+            <div class="content has-text-left is-size-5">
+              <strong>Comparison (%) on VSGR for the Video Captioning.</strong>
+              </div>
+              <figure>
+                  <img src="static/images/vc.png" alt="fail" width="100%">
+              </figure>
+
+              <div class="content has-text-left is-size-5">
+                <strong>Comparison (%) on VSGR for the Relation Reasoning.</strong>
+                </div>
+                <figure>
+                    <img src="static/images/rr.png" alt="fail" width="100%">
+                </figure>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://githubcom/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- Initialize Slick Carousel -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let currentVideoIndex = 0;
+        const videos = document.querySelectorAll('#first-video-slider video');
+        const totalVideos = videos.length;
+
+        // Function to change video
+        function changeVideo(direction) {
+            videos[currentVideoIndex].style.display = 'none'; // Hide current video
+            currentVideoIndex = (currentVideoIndex + direction + totalVideos) % totalVideos;
+            videos[currentVideoIndex].style.display = 'block'; // Show new video
+        }
+
+        // Event listeners for buttons
+        document.getElementById('prevFirstVideo').addEventListener('click', function() {
+            changeVideo(-1);
+        });
+
+        document.getElementById('nextFirstVideo').addEventListener('click', function() {
+            changeVideo(1);
+        });
+
+        // Ensure only the first video is visible initially
+        videos.forEach((video, index) => {
+            video.style.display = index === 0 ? 'block' : 'none';
+        });
+    });
+  </script>
+</body>
+</html>
