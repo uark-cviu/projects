@@ -15,7 +15,9 @@ Continual Learning in semantic scene segmentation aims to continually learn new 
 
  <img src="./static/images/FirstFig-V3.jpg" alt="FALCON"/>
 
+## Code
 
+The implementation of FALCON can be found [here](https://github.com/uark-cviu/FALCON/)
 
 ## Citation
 
