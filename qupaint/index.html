@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="A multimodal Physics-Aware Instruction Tuning architecture (QuPAINT) that incorporates Physics-informed Attention to enable robust and discriminative 2D material representations.">
+  <meta name="keywords" content="QuPAINT, Synthia, QMat-Instruct, QF-Bench">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuPAINT: Physics-Aware Instruction Tuning Approach to Quantum Material Discovery</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/GLTFLoader.js"></script>
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script>
+    window.QUPAINT_API_BASE = "http://127.0.0.1:8001";
+  </script>
+  <script src="./static/js/index.js"></script>
+
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://keunhong.com">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://hypernerf.github.io">
+              HyperNeRF
+            </a>
+            <a class="navbar-item" href="https://nerfies.github.io">
+              Nerfies
+            </a>
+            <a class="navbar-item" href="https://latentfusion.github.io">
+              LatentFusion
+            </a>
+            <a class="navbar-item" href="https://photoshape.github.io">
+              PhotoShape
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav> -->
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">QuPAINT: Physics-Aware Instruction Tuning Approach to Quantum
+              Material Discovery</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://ngxbac.github.io/">Xuan Bac Nguyen</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://nhquanqt.github.io/">Hoang-Quan Nguyen</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.sankalppandey.tech/">Sankalp Pandey</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.boryslab.com/people-1">Tim Faltermeier</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.boryslab.com/people-1">Nicholas Borys</a><sup>2</sup>,
+              </span>
+              <span class=" author-block">
+                <a href="https://physics.uark.edu/directory/index/uid/hchurch/name/Hugh+Churchill/">Hugh
+                  Churchill</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a
+                  href="https://engineering.uark.edu/electrical-engineering-computer-science/electrical-engineering-faculty/uid/khoaluu/name/Khoa+Luu/">Khoa
+                  Luu</a><sup>1</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>University of Arkansas,</span>
+              <span class="author-block"><sup>2</sup>University of Utah</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- <span class="link-block">
+                  <a href="./static/tbd.html" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv (TBD)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (TBD)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data (TBD)</span>
+                  </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <img src="static/images/architecture_3.png" class="hero-figure" alt="QuPAINT architecture">
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Characterizing two-dimensional quantum materials from optical microscopy images is challenging due to the
+              subtle layer-dependent contrast, limited labeled data, and significant variation across laboratories and
+              imaging setups. Existing vision models struggle in this domain since they lack physical priors and cannot
+              generalize to new materials or hardware conditions. </p>
+            <p>
+              This work presents a new physics-aware multimodal framework that addresses these limitations from both the
+              data and model perspectives. We first present Synthia, a physics-based synthetic data generator that
+              simulates realistic optical responses of quantum material flakes under thin-film interference. Synthia
+              produces diverse and high-quality samples, helping reduce the dependence on expert manual annotation. We
+              introduce QMat-Instruct, the first large-scale instruction dataset for quantum materials, comprising
+              multimodal, physics-informed question–answer pairs designed to teach Multimodal Large Language Models
+              (MLLMs) to understand the appearance and thickness of flakes.
+            </p>
+            <p>
+              Then, we propose Physics-Aware Instruction Tuning (QuPAINT), a multimodal architecture that incorporates a
+              Physics-Informed Attention module to fuse visual embeddings with optical priors, enabling more robust and
+              discriminative flake representations. Finally, we establish QF-Bench, a comprehensive benchmark spanning
+              multiple materials, substrates, and imaging settings, offering standardized protocols for fair and
+              reproducible evaluation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Reasoning with Physics-Aware Instructions</h2>
+      <div class="columns is-centered">
+        <div class="column is-5">
+          <div class="content">
+            <video poster="" id="video1" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/video1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column is-5">
+          <div class="content">
+            <video poster="" id="video2" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/video2.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column is-5">
+          <div class="content">
+            <video poster="" id="video3" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/video3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pia-visualizer">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Physics-Informed Attention (PIA)</h2>
+      <img src="static/images/architecture_2.png" class="pia-figure" alt="Physics-Informed Attention architecture">
+      <h3 style="margin-top: 10px; margin-bottom: 15px;">Physics-Informed Attention (PIA) adopts a simple, physics-aware
+        proxy to approximate the optical thin-film contrast of two-dimensional materials using CIELAB distances. The
+        perceptual color contrast (∆E) between a flake region and its surrounding substrate provides a robust and
+        illumination-invariant measure of reflectance differences caused by thin-film interference, producing an
+        attention map that highlights physically meaningful optical cues without requiring full optical simulation.</h3>
+
+      <div class="columns is-centered">
+        <div class="column is-one-quarter">
+          <div class="box" style="background: #ffffff; padding: 1.25rem;">
+            <label class="label is-size-7 has-text-black mb-3">TEST INPUTS</label>
+            <div id="pia-gallery-list" class="columns is-multiline is-mobile">
+              <div class="column is-6"><img class="pia-select" data-id="1" src="static/images/input1.png"></div>
+              <div class="column is-6"><img class="pia-select" data-id="2" src="static/images/input2.png"></div>
+              <div class="column is-6"><img class="pia-select" data-id="3" src="static/images/input3.png"></div>
+              <div class="column is-6"><img class="pia-select" data-id="4" src="static/images/input4.png"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box comparison-container"
+            style="height: 480px; background: #ffffff; padding: 15px; position: relative;">
+            <div id="pia-waiting-overlay"
+              style="position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.9); border-radius: 6px;">
+              <div class="has-text-centered">
+                <span class="icon is-large has-text-black"><i class="fas fa-mouse-pointer fa-2x"></i></span>
+                <p class="has-text-black is-size-6 mt-2" style="font-family: 'Courier New', monospace;">SELECT A SAMPLE
+                  TO SEE PIA...</p>
+              </div>
+            </div>
+            <div id="comparison-view" class="comparison-flex" style="visibility: hidden;">
+              <div class="comparison-half">
+                <div class="view-tag">RAW MICROSCOPY</div>
+                <img id="main-input" src="">
+              </div>
+              <div class="comparison-half">
+                <div class="view-tag" style="color: #ff9d00;">PIA ATTENTION MAP</div>
+                <img id="main-output" src="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{nguyen2026qupaint,
+  author    = {Nguyen, Xuan Bac and Nguyen, Hoang-Quan and Pandey, Sankalp and Faltermeier, Tim and Borys, Nicholas and Churchill, Hugh and Luu, Khoa},
+  title     = {QuPAINT: Physics-Aware Instruction Tuning Approach to Quantum Material Discovery},
+  journal   = {arXiv},
+  year      = {2026},
+}</code></pre>
+    </div>
+  </section> -->
+
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="#">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/ngxbac" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p style="text-align:center;">
+              Source code borrowed from <a href="https://keunhong.com/">Keunhong Park</a>'s <a
+                href="https://nerfies.github.io/">Nerfies</a>
+              website.
+            </p>
+            <p style="text-align:center;">
+              Please contact <a href="https://ngxbac.github.io/">Xuan-Bac Nguyen</a> for feedback and questions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
