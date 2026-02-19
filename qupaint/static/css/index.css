@@ -2,6 +2,19 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+.team-avatar {
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.team-avatar img {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  display: block;
+}
+
 
 .footer .icon-link {
   font-size: 25px;
