@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ɸ-DPO</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="static/images/UA_Logo.png">
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Google Analytics -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-825ET94Y3E');
+  </script>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand"><a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"><span
+          aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;"><a class="navbar-item"
+          href="https://uark-cviu.github.io/"><span class="icon"><svg class="svg-inline--fa fa-home fa-w-18"
+              aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home" role="img"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="">
+              <path fill="currentColor"
+                d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z">
+              </path>
+            </svg><!-- <i class="fas fa-home"></i> Font Awesome fontawesome.com --></span></a>
+        <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">Our Related Research</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://uark-cviu.github.io/projects/DirectedTokens/">DirectedTokens</a>
+            <a class="navbar-item" href="https://uark-cviu.github.io/projects/MANGO/">MANGO</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  </section>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">ɸ-DPO: Fairness Direct Preference Optimization Approach to
+              Continual Learning in Large Multimodal Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="" target="_blank">Thanh-Dat Truong<sup>1</sup></a>,</span>
+              <a href="" target="_blank">Huu-Thien Tran<sup>1</sup></a>,</span>
+              <a href="" target="_blank">Jackson Cothren<sup>2</sup></a>,</span>
+              <a href="" target="_blank">Bhiksha Raj<sup>3</sup></a>,</span>
+              <a href="" target="_blank">Khoa Luu<sup>1</sup></a></span>
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup>CVIU Lab, University of Arkansas&nbsp;&nbsp;&nbsp;&nbsp;
+                <sup>2</sup>Dept. of Geosciences, University of Arkansas&nbsp;&nbsp;&nbsp;&nbsp; <br>
+                <sup>3</sup>Carnegie Mellon University&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <br>
+            </div>
+            <p style="color:#000; font-weight:bold; font-size:1.5em;" class="text-center">🎉 <strong>Accepted to CVPR
+                2026</strong> 🎉</p>
+            <!-- Publication Links -->
+            <div class="publication-links">
+              <!-- ArXiv abstract Link -->
+              <span class="link-block">
+                <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (TBA)</span>
+                </a>
+
+              </span>
+              <span class="link-block">
+                <a href="#" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (TBA)</span>
+                </a>
+                </a>
+              </span>
+
+            </div>
+
+            <figure>
+              <img src="static/images/teaser-abstract.jpg" alt="" width="100%">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section hero is-light">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Highlights</h2>
+          <div class="content has-text-justified">
+            <p>
+            <ul>
+              <li>Introduce a new continual learning paradigm via DPO, termed as ɸ-DPO, which addresses the catastrophic forgetting problem.</li>
+              <li>Present a novel Fairness DPO loss to address the fairness problem caused by imbalanced data, by analyzing the limitations of traditional DPO.</li>
+              <li>Provide a comprehensive theoretical analysis to show that our ɸ-DPO can address both catastrophic forgetting and imbalanced data.</li>
+              <li>Construct preference data labels for current continual learning benchmarks, to support the DPO learning in our framework.</li>
+              <li>Achieve State-of-the-Art performance via intensive experiments and ablation studies.</li>
+            </ul>
+            <figure>
+              <img src="static/images/framework.jpg" alt="" width="100%">
+            </figure>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section hero is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Fairness in Continual Learning for Large Multimodal Models (LMMs) is an emerging yet underexplored
+              challenge, particularly in the presence of imbalanced data distributions that can lead to biased model
+              updates and suboptimal performance across tasks. While recent continual learning studies have made
+              progress in addressing catastrophic forgetting, the problem of fairness caused the imbalanced data remains
+              largely underexplored. This paper presents a novel Fairness Direct Preference Optimization (FaiDPO or
+              ɸ-DPO) framework for continual learning in LMMs. In particular, we first propose a new continual learning
+              paradigm based on Direct Preference Optimization (DPO) to mitigate catastrophic forgetting by aligning
+              learning with pairwise preference signals. Then, we identify the limitations of conventional DPO in
+              imbalanced data and present a new ɸ-DPO loss that explicitly addresses distributional biases. We provide a
+              comprehensive theoretical analysis demonstrating that our approach addresses both forgetting and data
+              imbalance. Additionally, to enable ɸ-DPO-based continual learning, we construct pairwise preference
+              annotations for existing benchmarks in the context of continual learning. Extensive experiments and
+              ablation studies show the proposed ɸ-DPO achieves State-of-the-Art performance across multiple benchmarks,
+              outperforming prior continual learning methods of LMMs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section hero is-light">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Preference Data Curation</h2>
+
+          <figure>
+            <img src="static/images/pref-data.jpg" alt="" width="100%">
+            <figcaption class="content" style="word-break:normal">Example of our DPO data in the Continual Learning Benchmark.</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Experimental Results</h2>
+
+          <div class="content has-text-left is-size-5">
+            <center>
+              <strong>Results on MLLM-CL Domain</strong>
+            </center>
+          </div>
+
+          <table class="table is-striped is-hoverable">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Remote Sensing</th>
+                <th>Medical</th>
+                <th>Autonomous Driving</th>
+                <th>ScienceQA</th>
+                <th>Finance</th>
+                <th>MFT↑</th>
+                <th>MFN↑</th>
+                <th>MAA↑</th>
+                <th>BWT↑</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Zeroshot</th>
+                <td>32.29</td>
+                <td>28.28</td>
+                <td>15.59</td>
+                <td>35.55</td>
+                <td>62.56</td>
+                <td>34.85</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+              </tr>
+              <tr>
+                <th>LoRA-FT*</th>
+                <td>76.54</td>
+                <td>50.27</td>
+                <td>43.01</td>
+                <td>43.32</td>
+                <td>89.85</td>
+                <td>66.32</td>
+                <td>60.60</td>
+                <td>64.72</td>
+                <td>-7.15</td>
+              </tr>
+              <tr>
+                <th>O-LoRA*</th>
+                <td>76.94</td>
+                <td>41.17</td>
+                <td>34.18</td>
+                <td>39.61</td>
+                <td>83.22</td>
+                <td>60.49</td>
+                <td>55.02</td>
+                <td>60.73</td>
+                <td>-6.83</td>
+              </tr>
+              <tr>
+                <th>MoELoRA*</th>
+                <td>77.63</td>
+                <td>49.54</td>
+                <td>39.08</td>
+                <td>41.04</td>
+                <td>89.21</td>
+                <td>66.24</td>
+                <td>59.30</td>
+                <td>64.81</td>
+                <td>-8.68</td>
+              </tr>
+              <tr>
+                <th>CL-MoE*</th>
+                <td>76.58</td>
+                <td>52.31</td>
+                <td>39.65</td>
+                <td>45.64</td>
+                <td>90.21</td>
+                <td>66.65</td>
+                <td>60.88</td>
+                <td>64.95</td>
+                <td>-7.22</td>
+              </tr>
+              <tr>
+                <th>HiDe*</th>
+                <td>74.80</td>
+                <td>42.29</td>
+                <td>34.03</td>
+                <td>38.01</td>
+                <td>79.22</td>
+                <td>60.83</td>
+                <td>53.67</td>
+                <td>61.81</td>
+                <td>-8.95</td>
+              </tr>
+              <tr>
+                <th>SEFE*</th>
+                <td>78.43</td>
+                <td>52.85</td>
+                <td>46.21</td>
+                <td>47.76</td>
+                <td>89.33</td>
+                <td>66.89</td>
+                <td>62.92</td>
+                <td>66.51</td>
+                <td>-4.97</td>
+              </tr>
+              <tr>
+                <th>DISCO*</th>
+                <td>77.78</td>
+                <td>46.25</td>
+                <td>50.45</td>
+                <td>49.51</td>
+                <td>89.71</td>
+                <td>65.27</td>
+                <td>62.74</td>
+                <td>64.92</td>
+                <td>-3.17</td>
+              </tr>
+              <tr>
+                <th>LoRA-FT</th>
+                <td>69.65</td>
+                <td>41.59</td>
+                <td>25.43</td>
+                <td>40.88</td>
+                <td>87.45</td>
+                <td>64.98</td>
+                <td>53.00</td>
+                <td>61.13</td>
+                <td>-14.97</td>
+              </tr>
+              <tr>
+                <th>O-LoRA</th>
+                <td>74.64</td>
+                <td>44.42</td>
+                <td>30.02</td>
+                <td>41.47</td>
+                <td>87.15</td>
+                <td>65.16</td>
+                <td>55.54</td>
+                <td>62.12</td>
+                <td>-12.03</td>
+              </tr>
+              <tr>
+                <th>MoELoRA</th>
+                <td>77.54</td>
+                <td>41.85</td>
+                <td>27.62</td>
+                <td>40.13</td>
+                <td>86.75</td>
+                <td>64.94</td>
+                <td>54.78</td>
+                <td>61.76</td>
+                <td>-12.70</td>
+              </tr>
+              <tr>
+                <th>CL-MoE</th>
+                <td>71.34</td>
+                <td>46.84</td>
+                <td>26.33</td>
+                <td>41.17</td>
+                <td>88.74</td>
+                <td>66.06</td>
+                <td>54.88</td>
+                <td>61.79</td>
+                <td>-13.96</td>
+              </tr>
+              <tr>
+                <th>HiDe</th>
+                <td>74.31</td>
+                <td>48.95</td>
+                <td>33.21</td>
+                <td>38.54</td>
+                <td>81.55</td>
+                <td>60.77</td>
+                <td>55.31</td>
+                <td>60.68</td>
+                <td>-6.82</td>
+              </tr>
+              <tr>
+                <th>SEFE</th>
+                <td>77.26</td>
+                <td>50.37</td>
+                <td>37.21</td>
+                <td>40.87</td>
+                <td>86.82</td>
+                <td>65.01</td>
+                <td>58.51</td>
+                <td>63.63</td>
+                <td>-8.13</td>
+              </tr>
+              <tr>
+                <th>DISCO</th>
+                <td>76.03</td>
+                <td>45.20</td>
+                <td>43.79</td>
+                <td>42.33</td>
+                <td>88.95</td>
+                <td>64.43</td>
+                <td>59.26</td>
+                <td>63.35</td>
+                <td>-6.46</td>
+              </tr>
+              <tr>
+                <th>MR-LoRA</th>
+                <td>80.87</td>
+                <td>65.32</td>
+                <td>54.12</td>
+                <td>56.71</td>
+                <td>91.12</td>
+                <td>69.64</td>
+                <td>69.63</td>
+                <td>71.06</td>
+                <td><strong>-0.01</strong></td>
+              </tr>
+              <tr>
+                <th class="is-primary">ɸ-DPO</th>
+                <td><strong>85.68</strong></td>
+                <td><strong>69.74</strong></td>
+                <td><strong>57.73</strong></td>
+                <td><strong>61.55</strong></td>
+                <td><strong>95.28</strong></td>
+                <td><strong>74.29</strong></td>
+                <td><strong>74.00</strong></td>
+                <td><strong>75.68</strong></td>
+                <td>-0.37</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="10">* denotes the method using relay data.</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <br>
+
+          <div class="content has-text-left is-size-5">
+            <center>
+              <strong>Results on MLLM-CL Ability</strong>
+            </center>
+          </div>
+
+          <table class="table is-striped is-hoverable">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>OCR</th>
+                <th>Math & Logic</th>
+                <th>Visual Perception</th>
+                <th>GUI</th>
+                <th>MFT↑</th>
+                <th>MFN↑</th>
+                <th>MAA↑</th>
+                <th>BWT↑</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Zeroshot</th>
+                <td>31.20</td>
+                <td>30.20</td>
+                <td>60.79</td>
+                <td>10.00</td>
+                <td>33.05</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+              </tr>
+              <tr>
+                <th>LoRA-FT*</th>
+                <td>21.80</td>
+                <td>32.70</td>
+                <td>58.38</td>
+                <td>28.75</td>
+                <td>40.32</td>
+                <td>35.41</td>
+                <td>36.32</td>
+                <td>-6.55</td>
+              </tr>
+              <tr>
+                <th>O-LoRA*</th>
+                <td>29.60</td>
+                <td>31.30</td>
+                <td>60.79</td>
+                <td>27.50</td>
+                <td>39.96</td>
+                <td>37.30</td>
+                <td>36.34</td>
+                <td>-3.55</td>
+              </tr>
+              <tr>
+                <th>MoELoRA*</th>
+                <td>19.80</td>
+                <td>32.20</td>
+                <td>54.19</td>
+                <td>30.00</td>
+                <td>40.35</td>
+                <td>34.05</td>
+                <td>35.39</td>
+                <td>-8.41</td>
+              </tr>
+              <tr>
+                <th>CL-MoE*</th>
+                <td>25.40</td>
+                <td>31.80</td>
+                <td>60.91</td>
+                <td>30.00</td>
+                <td>41.22</td>
+                <td>37.03</td>
+                <td>37.28</td>
+                <td>-5.59</td>
+              </tr>
+              <tr>
+                <th>HiDe*</th>
+                <td>24.60</td>
+                <td>28.40</td>
+                <td>30.71</td>
+                <td>23.75</td>
+                <td>36.84</td>
+                <td>26.86</td>
+                <td>33.54</td>
+                <td>-13.30</td>
+              </tr>
+              <tr>
+                <th>SEFE*</th>
+                <td>25.60</td>
+                <td>34.80</td>
+                <td>57.61</td>
+                <td>31.39</td>
+                <td>42.25</td>
+                <td>37.35</td>
+                <td>37.93</td>
+                <td>-6.53</td>
+              </tr>
+              <tr>
+                <th>DISCO*</th>
+                <td>34.20</td>
+                <td>35.00</td>
+                <td>61.55</td>
+                <td>27.50</td>
+                <td>40.14</td>
+                <td>39.56</td>
+                <td>37.85</td>
+                <td>-0.77</td>
+              </tr>
+              <tr>
+                <th>LoRA-FT</th>
+                <td>23.60</td>
+                <td>33.70</td>
+                <td>55.84</td>
+                <td>32.50</td>
+                <td>41.28</td>
+                <td>36.41</td>
+                <td>36.58</td>
+                <td>-6.49</td>
+              </tr>
+              <tr>
+                <th>O-LoRA</th>
+                <td>29.60</td>
+                <td>32.90</td>
+                <td>52.41</td>
+                <td>33.75</td>
+                <td>39.72</td>
+                <td>37.16</td>
+                <td>35.42</td>
+                <td>-3.41</td>
+              </tr>
+              <tr>
+                <th>MoELoRA</th>
+                <td>26.70</td>
+                <td>32.80</td>
+                <td>56.85</td>
+                <td>27.22</td>
+                <td>39.45</td>
+                <td>35.89</td>
+                <td>36.07</td>
+                <td>-4.75</td>
+              </tr>
+              <tr>
+                <th>CL-MoE</th>
+                <td>19.90</td>
+                <td>32.70</td>
+                <td>53.43</td>
+                <td>30.69</td>
+                <td>40.50</td>
+                <td>34.18</td>
+                <td>35.65</td>
+                <td>-8.43</td>
+              </tr>
+              <tr>
+                <th>HiDe</th>
+                <td>24.60</td>
+                <td>32.10</td>
+                <td>46.32</td>
+                <td>28.75</td>
+                <td>37.98</td>
+                <td>32.94</td>
+                <td>34.60</td>
+                <td>-6.72</td>
+              </tr>
+              <tr>
+                <th>SEFE</th>
+                <td>26.00</td>
+                <td>33.40</td>
+                <td>57.74</td>
+                <td>33.75</td>
+                <td>40.98</td>
+                <td>37.72</td>
+                <td>36.59</td>
+                <td>-4.35</td>
+              </tr>
+              <tr>
+                <th>DISCO</th>
+                <td>32.90</td>
+                <td>33.10</td>
+                <td>60.15</td>
+                <td>30.14</td>
+                <td>39.02</td>
+                <td>39.07</td>
+                <td>36.57</td>
+                <td>0.07</td>
+              </tr>
+              <tr>
+                <th>MR-LoRA</th>
+                <td>33.70</td>
+                <td>36.20</td>
+                <td>65.10</td>
+                <td>32.50</td>
+                <td>41.89</td>
+                <td>41.88</td>
+                <td>38.86</td>
+                <td><strong>-0.02</strong></td>
+              </tr>
+              <tr>
+                <th class="is-primary">ɸ-DPO</th>
+                <td><strong>38.40</strong></td>
+                <td><strong>39.20</strong></td>
+                <td><strong>68.65</strong></td>
+                <td><strong>35.00</strong></td>
+                <td><strong>45.55</strong></td>
+                <td><strong>45.31</strong></td>
+                <td><strong>43.03</strong></td>
+                <td>-0.31</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="9">* denotes the method using relay data.</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <br>
+
+          <div class="content has-text-left is-size-5">
+            <center>
+              <strong>Results on CoIN Benchmark</strong>
+            </center>
+          </div>
+
+          <table class="table is-striped is-hoverable">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>ScienceQA</th>
+                <th>ImageNet</th>
+                <th>VizWiz</th>
+                <th>Grounding</th>
+                <th>TextVQA</th>
+                <th>GQA</th>
+                <th>VQAv2</th>
+                <th>OCR</th>
+                <th>MFN↑</th>
+                <th>MAA↑</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Zeroshot</th>
+                <td>69.79</td>
+                <td>9.93</td>
+                <td>45.50</td>
+                <td>58.47</td>
+                <td>57.75</td>
+                <td>60.77</td>
+                <td>66.50</td>
+                <td>64.93</td>
+                <td>--</td>
+                <td>--</td>
+              </tr>
+              <tr>
+                <th>FineTune</th>
+                <td>57.43</td>
+                <td>28.90</td>
+                <td>41.88</td>
+                <td>30.05</td>
+                <td>51.39</td>
+                <td>50.76</td>
+                <td>53.28</td>
+                <td>64.78</td>
+                <td>47.31</td>
+                <td>52.86</td>
+              </tr>
+              <tr>
+                <th>LwF</th>
+                <td>60.71</td>
+                <td>30.58</td>
+                <td>41.49</td>
+                <td>36.01</td>
+                <td>52.80</td>
+                <td>47.07</td>
+                <td>53.43</td>
+                <td>65.12</td>
+                <td>48.40</td>
+                <td>53.22</td>
+              </tr>
+              <tr>
+                <th>EWC</th>
+                <td>59.75</td>
+                <td>31.88</td>
+                <td>42.26</td>
+                <td>34.96</td>
+                <td>51.06</td>
+                <td>51.84</td>
+                <td>55.30</td>
+                <td>64.55</td>
+                <td>48.95</td>
+                <td>53.30</td>
+              </tr>
+              <tr>
+                <th>L2P</th>
+                <td>70.21</td>
+                <td>23.31</td>
+                <td>44.21</td>
+                <td>43.76</td>
+                <td>56.25</td>
+                <td>58.46</td>
+                <td>62.32</td>
+                <td>64.11</td>
+                <td>52.83</td>
+                <td>53.96</td>
+              </tr>
+              <tr>
+                <th>O-LoRA</th>
+                <td>72.56</td>
+                <td>62.84</td>
+                <td>48.43</td>
+                <td>58.97</td>
+                <td>57.66</td>
+                <td>59.14</td>
+                <td>63.21</td>
+                <td>63.31</td>
+                <td>60.77</td>
+                <td>62.60</td>
+              </tr>
+              <tr>
+                <th>MoELoRA</th>
+                <td>62.02</td>
+                <td>37.21</td>
+                <td>43.32</td>
+                <td>33.22</td>
+                <td>52.05</td>
+                <td>53.12</td>
+                <td>57.92</td>
+                <td>65.75</td>
+                <td>50.58</td>
+                <td>55.24</td>
+              </tr>
+              <tr>
+                <th>HiDe</th>
+                <td>73.20</td>
+                <td>69.28</td>
+                <td>50.76</td>
+                <td>59.18</td>
+                <td>56.92</td>
+                <td>61.33</td>
+                <td>67.12</td>
+                <td>64.76</td>
+                <td>62.82</td>
+                <td>64.70</td>
+              </tr>
+              <tr>
+                <th class="is-primary">ɸ-DPO</th>
+                <td><strong>77.84</strong></td>
+                <td><strong>95.61</strong></td>
+                <td><strong>54.55</strong></td>
+                <td><strong>60.74</strong></td>
+                <td><strong>59.17</strong></td>
+                <td><strong>64.32</strong></td>
+                <td><strong>69.99</strong></td>
+                <td><strong>68.69</strong></td>
+                <td><strong>68.86</strong></td>
+                <td><strong>74.94</strong></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="11"></td>
+              </tr>
+            </tfoot>
+          </table>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">Acknowledgments</h2>
+      TBA
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">BibTex</h2>
+      <pre><code>
+        TBA
+    </code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <center>
+              <p>
+                This project template was adopted from <a href="https://nerfies.github.io" target="_blank">Nerfies</a>.
+              </p>
+            </center>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Initialize Slick Carousel -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let currentVideoIndex = 0;
+      const videos = document.querySelectorAll('.videos video');
+      const totalVideos = videos.length;
+
+      document.getElementById('prevBtn').addEventListener('click', function () {
+        changeVideo(-1);
+      });
+
+      document.getElementById('nextBtn').addEventListener('click', function () {
+        changeVideo(1);
+      });
+
+      document.querySelectorAll('.img-zoom').forEach(img => {
+        img.addEventListener('click', function () {
+          this.classList.toggle('active');
+        });
+      });
+
+      function changeVideo(direction) {
+        videos[currentVideoIndex].style.display = 'none';
+        currentVideoIndex = (currentVideoIndex + direction + totalVideos) % totalVideos;
+        videos[currentVideoIndex].style.display = 'block';
+      }
+
+      function openModal(img) {
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      }
+
+      var span = document.getElementsByClassName("close")[0];
+      if (span) {
+        span.onclick = function () {
+          var modal = document.getElementById("myModal");
+          modal.style.display = "none";
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
