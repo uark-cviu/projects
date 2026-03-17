@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="OpenQlaw is an agentic AI assistant for analysis of 2D quantum materials that combines QuPAINT, deterministic tools, and persistent memory for practical lab-floor workflows.">
+  <meta name="keywords" content="OpenQlaw, QuPAINT, 2D quantum materials, agentic AI, microscopy">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenQlaw: An Agentic AI Assistant for Analysis of 2D Quantum Materials</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/uark_logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">OpenQlaw: An Agentic AI Assistant for Analysis of 2D Quantum
+              Materials</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://www.sankalppandey.tech/">Sankalp Pandey</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://ngxbac.github.io/">Xuan-Bac Nguyen</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://nhquanqt.github.io/">Hoang-Quan Nguyen</a><sup>1,4</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.boryslab.com/people-1">Tim Faltermeier</a><sup>2,4</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.boryslab.com/people-1">Nicholas Borys</a><sup>2,4</sup>,</span>
+              <span class="author-block">
+                <a href="https://physics.uark.edu/directory/index/uid/hchurch/name/Hugh+Churchill/">Hugh
+                  Churchill</a><sup>3,4</sup>,</span>
+              <span class="author-block">
+                <a
+                  href="https://engineering.uark.edu/electrical-engineering-computer-science/electrical-engineering-faculty/uid/khoaluu/name/Khoa+Luu/">Khoa
+                  Luu</a><sup>1,4</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Quantum AI Lab, University of Arkansas,</span>
+              <span class="author-block"><sup>2</sup>University of Utah,</span>
+              <span class="author-block"><sup>3</sup>Department of Physics, University of Arkansas,</span>
+              <span class="author-block"><sup>4</sup>MonARK NSF Quantum Foundry</span>
+            </div>
+
+            <p>
+              <a class="mono-link" href="https://uark-cviu.github.io" target="_blank">
+                https://uark-cviu.github.io/
+              </a>
+            </p>
+            <p>
+              <a class="mono-link" href="https://uark-quantumai.github.io/" target="_blank">
+                https://uark-quantumai.github.io/
+              </a>
+            </p>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="./static/papers/openqlaw-agentic-ai-assistant.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <!-- <i class="ai ai-arxiv"></i> -->
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv (TBD)</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="./static/images/openqlaw_framework.png" class="hero-figure" alt="OpenQlaw framework overview">
+        <h2 class="subtitle has-text-centered teaser-subtitle">
+          OpenQlaw orchestrates QuPAINT as a material-domain expert, applies deterministic execution tools, and keeps
+          persistent context for practical microscopy workflows.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+             The transition from optical identification of 2D quantum materials to practical device fabrication requires dynamic reasoning past accurate detection. While recent domain-specific Multimodal Large Language Models (MLLMs) successfully ground visual features using physics-informed reasoning, their outputs are optimized for step-by-step cognitive transparency. This yields verbose candidate enumerations followed by dense reasoning that, while accurate, may induce cognitive overload and lack immediate utility for real-world interaction with researchers. </p><p>To address this challenge, we introduce OpenQlaw, an agentic orchestration system for analyzing 2D materials. The architecture is built upon NanoBot, a lightweight agentic framework inspired by OpenClaw, and QuPAINT, one of the first Physics-Aware Instruction Multi-modal platforms for Quantum Material Discovery. This allows accessibility to the lab floor via a variety of messaging channels. OpenQlaw allows the core Large Language Model (LLM) agent to orchestrate a domain-expert MLLM, with QuPAINT, as a specialized node, successfully decoupling visual identification from reasoning and deterministic image rendering.</p><p> By parsing spatial data from the expert, the agent can dynamically process user queries, such as performing scale-aware physical computation or generating isolated visual annotations, and answer in a naturalistic manner. Crucially, the system features a persistent memory that enables the agent to save physical scale ratios (e.g., 1 pixel = 0.25 &micro;m) for area computations and store sample preparation methods for efficacy comparison. 
+  The application of an agentic architecture and the extension to use the core agent as an orchestrator for domain-specific experts transforms isolated inferences into a context-aware assistant capable of accelerating high-throughput device fabrication. 
+
+            </p>
+            <p>
+  The application of an agentic architecture and the extension to use the core agent as an orchestrator for domain-specific experts transforms isolated inferences into a context-aware assistant capable of accelerating high-throughput device fabrication. 
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Highlights</h2>
+        </div>
+      </div>
+      <div class="columns is-centered is-variable is-4">
+        <div class="column">
+          <div class="box feature-box">
+            <h3 class="title is-5">Orchestration</h3>
+            <p>
+              A central vision-language agent manages the conversation, routes specialized image understanding requests to the appropriate
+              domain expert, and returns concise responses instead of exposing the full raw reasoning trace.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box feature-box">
+            <h3 class="title is-5">Material Domain Expert</h3>
+            <p>
+              QuPAINT, a specialized material-domain model, produces flake-localization outputs and
+              physics-aware reasoning that OpenQlaw can parse into actionable coordinate arrays.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box feature-box">
+            <h3 class="title is-5">Memory</h3>
+            <p>
+              Structured coordinates are combined with remembered scale and sample context to compute physical area and
+              produce targeted annotations when requested.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="results">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Qualitative Comparisons</h2>
+        </div>
+      </div>
+
+      <div class="columns is-variable is-5">
+        <div class="column is-5">
+          <div class="box result-box result-box-plain">
+            <h3 class="title is-5 has-text-centered">QuPAINT</h3>
+            <figure class="result-figure">
+              <img src="./static/images/quPAINT_results.png" alt="QuPAINT baseline result">
+            </figure>
+            <p class="result-caption">
+              QuPAINT identifies flakes, but the direct output is verbose and filled with raw coordinate arrays and
+              broad visual overlays that require extra manual interpretation.
+            </p>
+          </div>
+        </div>
+
+        <div class="column is-7">
+          <div class="box result-box result-box-plain">
+            <h3 class="title is-5 has-text-centered">OpenQlaw</h3>
+            <div class="phone-grid">
+              <figure class="result-figure">
+                <img src="./static/images/openQlaw_results1_1.jpeg"
+                  alt="OpenQlaw gives concise area and flake breakdown">
+              </figure>
+              <figure class="result-figure">
+                <img src="./static/images/openQlaw_results1_2.jpeg"
+                  alt="OpenQlaw highlights only the requested monolayer flake">
+              </figure>
+            </div>
+            <p class="result-caption">
+              OpenQlaw returns a concise breakdown first, computes approximate area from cached coordinates, and then
+              draws a box only after the user asks to see the monolayer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="memory">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Memory And Physical Calculations</h2>
+          <div class="content has-text-justified result-copy">
+            <p>
+              OpenQlaw stores imaging metadata and sample preparation notes as persistent context. Once the user gives a
+              physical scale, the system can reuse it in later turns to convert pixel-space detections into real
+              micrometer-based measurements and grounded follow-up responses.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="memory-grid">
+        <figure class="result-figure memory-figure">
+          <img src="./static/images/openQlaw_results2_1.png" alt="OpenQlaw remembers imaging metadata">
+        </figure>
+        <figure class="result-figure memory-figure">
+          <img src="./static/images/openQlaw_results2_2.png" alt="OpenQlaw stores sample preparation metadata">
+        </figure>
+        <figure class="result-figure memory-figure">
+          <img src="./static/images/openQlaw_results2_3.png"
+            alt="OpenQlaw computes physical area using remembered scale">
+        </figure>
+        <figure class="result-figure memory-figure">
+          <img src="./static/images/openQlaw_results2_4.png"
+            alt="OpenQlaw highlights the largest monolayer using persistent context">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered mb-5">Team</h2>
+
+      <div class="columns is-centered is-multiline">
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="image is-128x128 team-avatar">
+            <img class="is-rounded" src="./static/images/team/sankalppandey.png" alt="Sankalp Pandey">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Sankalp Pandey</h4>
+          <p class="is-size-7 has-text-grey">University of Arkansas</p>
+          <div class="team-links">
+            <a href="https://www.sankalppandey.tech/" class="icon has-text-dark" title="Website">
+              <i class="fas fa-globe"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=ax7YxjwAAAAJ&amp;hl=en"
+              class="icon has-text-dark" title="Google Scholar">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="image is-128x128 team-avatar">
+            <img class="is-rounded" src="./static/images/team/xuanbacnguyen.webp" alt="Xuan Bac Nguyen">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Xuan-Bac Nguyen</h4>
+          <p class="is-size-7 has-text-grey">University of Arkansas</p>
+          <div class="team-links">
+            <a href="https://ngxbac.github.io/" class="icon has-text-dark" title="Website">
+              <i class="fas fa-globe"></i>
+            </a>
+            <a
+              href="https://scholar.google.com/citations?hl=en&amp;user=UUPllH4AAAAJ&amp;view_op=list_works&amp;sortby=pubdate"
+              class="icon has-text-dark" title="Google Scholar">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="image is-128x128 team-avatar">
+            <img class="is-rounded" src="./static/images/team/hoangquannguyen.jpeg" alt="Hoang-Quan Nguyen">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Hoang-Quan Nguyen</h4>
+          <p class="is-size-7 has-text-grey">University of Arkansas</p>
+          <div class="team-links">
+            <a href="https://nhquanqt.github.io/" class="icon has-text-dark" title="Website">
+              <i class="fas fa-globe"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=J414r4kAAAAJ&amp;hl=en"
+              class="icon has-text-dark" title="Google Scholar">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="image is-128x128 team-avatar">
+            <img class="is-rounded" src="./static/images/team/timfaltermeier.webp" alt="Tim Faltermeier">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Tim Faltermeier</h4>
+          <p class="is-size-7 has-text-grey">University of Utah</p>
+          <div class="team-links">
+            <a href="https://www.boryslab.com/people-1" class="icon has-text-dark" title="Website">
+              <i class="fas fa-globe"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered is-multiline mt-5">
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="image is-128x128 team-avatar">
+            <img class="is-rounded" src="./static/images/team/nicholasborys.webp" alt="Nicholas Borys">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Nicholas Borys</h4>
+          <p class="is-size-7 has-text-grey">University of Utah</p>
+          <div class="team-links">
+            <a href="https://www.boryslab.com/people-1" class="icon has-text-dark" title="Website">
+              <i class="fas fa-globe"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=AA4JNhMAAAAJ&amp;hl=en"
+              class="icon has-text-dark" title="Google Scholar">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="image is-128x128 team-avatar">
+            <img class="is-rounded" src="./static/images/team/hughchurchill.webp" alt="Hugh Churchill">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Hugh Churchill</h4>
+          <p class="is-size-7 has-text-grey">University of Arkansas</p>
+          <div class="team-links">
+            <a href="https://physics.uark.edu/directory/index/uid/hchurch/name/Hugh+Churchill/"
+              class="icon has-text-dark" title="Website">
+              <i class="fas fa-globe"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=mTz6GK0AAAAJ&amp;hl=en"
+              class="icon has-text-dark" title="Google Scholar">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="image is-128x128 team-avatar">
+            <img class="is-rounded" src="./static/images/team/khoaluu.webp" alt="Khoa Luu">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Khoa Luu</h4>
+          <p class="is-size-7 has-text-grey">University of Arkansas</p>
+          <div class="team-links">
+            <a
+              href="https://engineering.uark.edu/electrical-engineering-computer-science/electrical-engineering-faculty/uid/khoaluu/name/Khoa+Luu/"
+              class="icon has-text-dark" title="Website">
+              <i class="fas fa-globe"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=JPAl8-gAAAAJ&amp;hl=en"
+              class="icon has-text-dark" title="Google Scholar">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered mb-5">Acknowledgements</h2>
+
+      <div class="content has-text-justified">
+        <p>
+          This work is partly supported by MonArk NSF Quantum Foundry (DMR-1906383) and NSF Quantum Award (2444042). It
+          acknowledges the Arkansas High-Performance Computing Center for providing GPUs.
+        </p>
+      </div>
+
+      <div class="columns is-centered is-vcentered mt-5">
+        <div class="column is-4 has-text-centered">
+          <figure class="image" style="display: inline-block;">
+            <img src="./static/images/monark.png" alt="MONARK Quantum Foundry Logo"
+              style="max-height: 120px; width: auto;">
+          </figure>
+        </div>
+
+        <div class="column is-4 has-text-centered">
+          <figure class="image" style="display: inline-block;">
+            <img src="./static/images/nsf.png" alt="National Science Foundation Logo"
+              style="max-height: 120px; width: auto;">
+          </figure>
+        </div>
+
+        <div class="column is-4 has-text-centered">
+          <figure class="image" style="display: inline-block;">
+            <img src="./static/images/ahpcc-logo.png" alt="Arkansas High-Performance Computing Center Logo"
+              style="max-height: 120px; width: auto;">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="./static/papers/openqlaw-agentic-ai-assistant.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p style="text-align:center;">
+              Source code borrowed from <a href="https://keunhong.com/">Keunhong Park</a>'s <a
+                href="https://nerfies.github.io/">Nerfies</a> website.
+            </p>
+            <p style="text-align:center;">
+              Please contact <a href="https://sankalppandey.tech">Sankalp Pandey</a> for feedback and questions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
