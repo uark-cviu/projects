@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="QuantumFlake hub for framework documentation, 2D-material microscopy research, publications, and project resources.">
+  <meta name="keywords" content="QuantumFlake, quantum materials, microscopy, flake detection, layer classification, computer vision">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuantumFlake</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-1 publication-title">Quantum<span class="title-flake">Flake</span></h1>
+        <p class="subtitle is-5 hero-subtitle">
+          The framework and research hub for automated 2D quantum materials characterization from optical microscopy.
+        </p>
+
+        <div class="publication-links">
+          <span class="link-block">
+            <a href="https://github.com/uark-cviu/quantumflake" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>Code</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://uark-cviu.github.io/" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon"><i class="fas fa-globe"></i></span>
+              <span>CVIU Lab</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://uark-quantumai.github.io/" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon"><i class="fas fa-atom"></i></span>
+              <span>Quantum AI Lab</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://www.monarkfoundry.org/" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon"><i class="fas fa-microscope"></i></span>
+              <span>MonArk Quantum Foundry</span>
+            </a>
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths framework-block">
+          <h2 class="title is-3 has-text-centered mb-4">Core Framework</h2>
+          <p class="framework-intro has-text-centered">
+            QuantumFlake is the is pipeline for flake detection, layer analysis, and experiment-facing outputs.
+          </p>
+          <div class="framework-links has-text-centered">
+            <a href="https://huggingface.co/collections/uark-cviu/2d-quantum-material-characterization" class="button is-rounded is-light">
+              <span class="icon"><i class="fas fa-cube"></i></span>
+              <span>Weights</span>
+            </a>
+            <a href="https://github.com/uark-cviu/quantumflake/blob/main/docs/get_started.md" class="button is-rounded is-light">
+              <span class="icon"><i class="fas fa-rocket"></i></span>
+              <span>Getting Started</span>
+            </a>
+            <a href="https://github.com/uark-cviu/quantumflake/blob/main/docs/model_zoo.md" class="button is-rounded is-light">
+              <span class="icon"><i class="fas fa-layer-group"></i></span>
+              <span>Model Zoo</span>
+            </a>
+            <a href="https://github.com/uark-cviu/quantumflake/blob/main/docs/guide/config.md" class="button is-rounded is-light">
+              <span class="icon"><i class="fas fa-sliders-h"></i></span>
+              <span>Config Guide</span>
+            </a>
+            <a href="https://github.com/uark-cviu/quantumflake/issues" class="button is-rounded is-light">
+              <span class="icon"><i class="fas fa-bug"></i></span>
+              <span>Issues</span>
+            </a>
+          </div>
+          <div class="framework-flow" aria-label="Core workflow">
+            <div class="flow-step">
+              <span class="flow-index">1</span>
+              <h3>Image Preparation</h3>
+              <p>Normalization, calibration support, and preprocessing for reliable input quality.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-index">2</span>
+              <h3>Flake Detection</h3>
+              <p>Modular detector backends for reliable flake localization across microscopy studies.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-index">3</span>
+              <h3>Layer Classification</h3>
+              <p>Layer predictions and analysis for experiments.</p>
+            </div>
+          </div>
+          <!-- <div class="framework-grid">
+            <article class="framework-card">
+              <h3 class="title is-5">General Idea</h3>
+              <p>Use one reproducible workflow for microscope-image preparation, flake localization, layer estimation, and clear visual or JSON outputs.</p>
+            </article>
+            <article class="framework-card">
+              <h3 class="title is-5">Current Scope</h3>
+              <p>The repo includes docs, checkpoints, training and inference utilities, and research subprojects. The detector layer is modular, with YOLO, DETR, ViTDet, OpenVINO-YOLO, and MaskTerial support in the current codebase.</p>
+            </article>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered mb-5">Research Projects</h2>
+
+          <div class="columns is-multiline">
+            <div class="column is-6-tablet is-4-desktop">
+              <article class="project-item">
+                <img src="./static/images/openqlaw_framework.png" alt="OpenQlaw figure" class="project-figure">
+                <h3 class="title is-5">OpenQlaw</h3>
+                <p>Agentic AI assistant for 2D quantum-material analysis, connecting visual reasoning and context-aware interaction.</p>
+                <div class="project-actions">
+                  <a href="https://arxiv.org/abs/2603.17043" class="button is-small is-rounded is-light">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                  <a href="https://uark-cviu.github.io/projects/OpenQlaw/" class="button is-small is-rounded is-light">
+                    <span class="icon"><i class="fas fa-globe"></i></span>
+                    <span>Website</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+              <article class="project-item">
+                <img src="./static/images/qupaint.png" alt="QuPAINT figure" class="project-figure">
+                <h3 class="title is-5">QuPAINT</h3>
+                <p>Physics-aware multimodal for robust flake reasoning across materials and imaging conditions.</p>
+                <div class="project-actions">
+                  <a href="https://github.com/uark-cviu/quantumflake/tree/main/qupaint" class="button is-small is-rounded is-light">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                  <a href="https://arxiv.org/abs/2602.17478" class="button is-small is-rounded is-light">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                  <a href="https://uark-cviu.github.io/projects/qupaint/" class="button is-small is-rounded is-light">
+                    <span class="icon"><i class="fas fa-globe"></i></span>
+                    <span>Website</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+              <article class="project-item">
+                <img src="./static/images/cliff.png" alt="CLIFF figure" class="project-figure">
+                <h3 class="title is-5">CLIFF</h3>
+                <p>Continual learning for adapting flake classification as new incremental material variations are introduced.</p>
+                <div class="project-actions">
+                  <a href="https://github.com/uark-cviu/quantumflake/tree/main/cliff" class="button is-small is-rounded is-light">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                  <a href="https://arxiv.org/abs/2508.17261" class="button is-small is-rounded is-light">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+              <article class="project-item">
+                <img src="./static/images/phiadapt.png" alt="Phi-Adapt figure" class="project-figure">
+                <h3 class="title is-5">&phi;-Adapt</h3>
+                <p>Physics-informed adaptation for synthetic-to-real transfer and robust flake thickness analysis across domain shifts.</p>
+                <div class="project-actions">
+                  <a href="https://github.com/uark-cviu/quantumflake/tree/main/phi_adapt" class="button is-small is-rounded is-light">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                  <a href="https://arxiv.org/abs/2507.05184" class="button is-small is-rounded is-light">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+            <div class="column is-6-tablet is-4-desktop">
+              <article class="project-item">
+                <img src="./static/images/selfattention.png" alt="Self-attention flake identification figure" class="project-figure">
+                <h3 class="title is-5">Self-Attention + Soft Labels</h3>
+                <p>Automated flake-identification work that established a baseline for 2D material analysis.</p>
+                <div class="project-actions">
+                  <a href="https://doi.org/10.1109/ACCESS.2024.3465221" class="button is-small is-rounded is-light">
+                    <span class="icon"><i class="fas fa-file-alt"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Publications</h2>
+
+          <h3 class="title is-5">Patents</h3>
+          <div class="content paper-list">
+            <p>
+              <strong>US20240282086A1</strong><br>
+              Khoa Luu, Xuan Bac Nguyen, Hugh Churchill.<br>
+              US Patent App. 18/443,058 (2024).<br>
+              <a href="https://patents.google.com/patent/US20240282086A1/en" target="_blank" rel="noopener noreferrer">Google Patents</a>
+            </p>
+          </div>
+
+          <h3 class="title is-5">Papers</h3>
+          <div class="content paper-list">
+            <p>
+              <strong>OpenQlaw: An Agentic AI Assistant for Analysis of 2D Quantum Materials</strong><br>
+              Sankalp Pandey, Xuan-Bac Nguyen, Hoang-Quan Nguyen, Tim Faltermeier, Nicholas Borys, Hugh Churchill, Khoa Luu (2026).<br>
+              <a href="https://arxiv.org/abs/2603.17043">arXiv:2603.17043</a>
+            </p>
+            <p>
+              <strong>QuPAINT: Physics-Aware Instruction Tuning Approach to Quantum Material Discovery</strong><br>
+              Xuan-Bac Nguyen, Hoang-Quan Nguyen, Sankalp Pandey, Tim Faltermeier, Nicholas Borys, Hugh Churchill, Khoa Luu (2026). CVPR 2026 Findings.<br>
+              <a href="https://arxiv.org/abs/2602.17478">arXiv:2602.17478</a>
+            </p>
+            <p>
+              <strong>CLIFF: Continual Learning for Incremental Flake Features in 2D Material Identification</strong><br>
+              Sankalp Pandey, Xuan Bac Nguyen, Nicholas Borys, Hugh Churchill, Khoa Luu (2025). NeurIPS 2025 AI4Mat Workshop.<br>
+              <a href="https://arxiv.org/abs/2508.17261">arXiv:2508.17261</a>
+            </p>
+            <p>
+              <strong>&phi;-Adapt: A Physics-Informed Adaptation Learning Approach to 2D Quantum Material Discovery</strong><br>
+              Hoang-Quan Nguyen, Xuan Bac Nguyen, Sankalp Pandey, Tim Faltermeier, Nicholas Borys, Hugh Churchill, Khoa Luu (2025). Under review.<br>
+              <a href="https://arxiv.org/abs/2507.05184">arXiv:2507.05184</a>
+            </p>
+            <p>
+              <strong>Two-Dimensional Quantum Material Identification via Self-Attention and Soft-Labeling in Deep Learning</strong><br>
+              Xuan Bac Nguyen, Apoorva Bisht, Benjamin Thompson, Hugh Churchill, Khoa Luu, Samee U. Khan (2024). Published in IEEE Access.<br>
+              <a href="https://doi.org/10.1109/ACCESS.2024.3465221">IEEE Access</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered mb-5">Team</h2>
+
+      <div class="columns is-centered is-multiline">
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="team-avatar">
+            <img src="./static/images/team/xuanbacnguyen.webp" alt="Xuan Bac Nguyen">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Xuan Bac Nguyen</h4>
+          <p class="team-role">Researcher</p>
+          <p class="team-affiliation">University of Arkansas</p>
+          <p class="team-email"><a href="mailto:xnguyen@uark.edu">xnguyen@uark.edu</a></p>
+          <div class="team-links">
+            <a href="https://ngxbac.github.io/" class="icon has-text-dark" title="Website"><i class="fas fa-globe"></i></a>
+            <a href="https://scholar.google.com/citations?hl=en&amp;user=UUPllH4AAAAJ&amp;view_op=list_works&amp;sortby=pubdate" class="icon has-text-dark" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          </div>
+        </div>
+
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="team-avatar">
+            <img src="./static/images/team/hoangquannguyen.jpeg" alt="Hoang-Quan Nguyen">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Hoang-Quan Nguyen</h4>
+          <p class="team-role">PhD Student</p>
+          <p class="team-affiliation">University of Arkansas</p>
+          <p class="team-email"><a href="mailto:hn016@uark.edu">hn016@uark.edu</a></p>
+          <div class="team-links">
+            <a href="https://nhquanqt.github.io/" class="icon has-text-dark" title="Website"><i class="fas fa-globe"></i></a>
+            <a href="https://scholar.google.com/citations?user=J414r4kAAAAJ&amp;hl=en" class="icon has-text-dark" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          </div>
+        </div>
+
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="team-avatar">
+            <img src="./static/images/team/sankalppandey.png" alt="Sankalp Pandey">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Sankalp Pandey</h4>
+          <p class="team-role">Undergraduate</p>
+          <p class="team-affiliation">University of Arkansas</p>
+          <p class="team-email"><a href="mailto:sankalpp@uark.edu">sankalpp@uark.edu</a></p>
+          <div class="team-links">
+            <a href="https://www.sankalppandey.tech/" class="icon has-text-dark" title="Website"><i class="fas fa-globe"></i></a>
+            <a href="https://scholar.google.com/citations?user=ax7YxjwAAAAJ&amp;hl=en" class="icon has-text-dark" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          </div>
+        </div>
+
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="team-avatar">
+            <img src="./static/images/team/timfaltermeier.webp" alt="Tim Faltermeier">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Tim Faltermeier</h4>
+          <p class="team-role">PhD Student</p>
+          <p class="team-affiliation">Montana State University</p>
+          <p class="team-email"><a href="mailto:timfaltermeier@montana.edu">timfaltermeier@montana.edu</a></p>
+          <div class="team-links">
+            <a href="https://www.boryslab.com/people-1" class="icon has-text-dark" title="Website"><i class="fas fa-globe"></i></a>
+          </div>
+        </div>
+
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="team-avatar">
+            <img src="./static/images/team/nicholasborys.webp" alt="Nicholas Borys">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Nicholas Borys</h4>
+          <p class="team-role">Professor</p>
+          <p class="team-affiliation">University of Utah</p>
+          <p class="team-email"><a href="mailto:nicholas.borys@utah.edu">nicholas.borys@utah.edu</a></p>
+          <div class="team-links">
+            <a href="https://www.boryslab.com/people-1" class="icon has-text-dark" title="Website"><i class="fas fa-globe"></i></a>
+            <a href="https://scholar.google.com/citations?user=AA4JNhMAAAAJ&amp;hl=en" class="icon has-text-dark" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          </div>
+        </div>
+
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="team-avatar">
+            <img src="./static/images/team/hughchurchill.webp" alt="Hugh Churchill">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Hugh Churchill</h4>
+          <p class="team-role">Professor</p>
+          <p class="team-affiliation">University of Arkansas</p>
+          <p class="team-email"><a href="mailto:hchurch@uark.edu">hchurch@uark.edu</a></p>
+          <div class="team-links">
+            <a href="https://physics.uark.edu/directory/index/uid/hchurch/name/Hugh+Churchill/" class="icon has-text-dark" title="Website"><i class="fas fa-globe"></i></a>
+            <a href="https://scholar.google.com/citations?user=mTz6GK0AAAAJ&amp;hl=en" class="icon has-text-dark" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          </div>
+        </div>
+
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="team-avatar">
+            <img src="./static/images/team/khoaluu.webp" alt="Khoa Luu">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Khoa Luu</h4>
+          <p class="team-role">Professor</p>
+          <p class="team-affiliation">University of Arkansas</p>
+          <p class="team-email"><a href="mailto:khoaluu@uark.edu">khoaluu@uark.edu</a></p>
+          <div class="team-links">
+            <a href="https://engineering.uark.edu/electrical-engineering-computer-science/electrical-engineering-faculty/uid/khoaluu/name/Khoa+Luu/" class="icon has-text-dark" title="Website"><i class="fas fa-globe"></i></a>
+            <a href="https://scholar.google.com/citations?user=JPAl8-gAAAAJ&amp;hl=en" class="icon has-text-dark" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Acknowledgments and Funding</h2>
+          <div class="content has-text-centered">
+            <p>
+              This work is partly supported by MonArk NSF Quantum Foundry (DMR-1906383) and NSF Quantum Award (2444042).
+              It acknowledges the Arkansas High-Performance Computing Center for providing GPUs.
+            </p>
+          </div>
+          <div class="funding-logos">
+            <img src="./static/images/monark.png" alt="MonArk NSF Quantum Foundry logo">
+            <img src="./static/images/nsf.png" alt="National Science Foundation logo">
+            <img src="./static/images/ahpcc-logo.png" alt="Arkansas High-Performance Computing Center logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
