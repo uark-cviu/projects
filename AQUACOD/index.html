@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="description"
     content="An agentic framework in which LLM-based agents automatically design penalty functions for quantum drone scheduling optimization.">
-  <meta name="keywords" content="Agentic Design, Penalty Functions, Quantum Optimization, Drone Scheduling">
+  <meta name="keywords" content="Drone Scheduling, Coordinate Descent, Quantum Optimization, Quantum Computing, Agentic AI">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Agentic Design of Penalty Functions for Quantum Optimization in Drone Scheduling</title>
+  <title>AQUACOD: Agentic Quantum Optimization via Coordinate Descent for Scalable Drone Scheduling</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -88,8 +88,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Agentic Design of Penalty Functions for Quantum Optimization in
-              Drone Scheduling</h1>
+            <h1 class="title is-1 publication-title">AQUACOD: Agentic Quantum Optimization via Coordinate Descent for
+              Scalable Drone Scheduling</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="mailto:hvn001@uark.edu">Van-Quang-Huy Nguyen</a><sup>1, 2</sup>,
@@ -162,14 +162,14 @@
                   </a>
                 </span> -->
                 <!-- Code Link. -->
-                <!-- <span class="link-block">
-                  <a href="https://github.com/google/nerfies" class="external-link button is-normal is-rounded is-dark">
+                <span class="link-block">
+                  <a href="https://github.com/uark-cviu/AQUACOD" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>Code + Data</span>
                   </a>
-                </span> -->
+                </span>
                 <!-- Dataset Link. -->
                 <!-- <span class="link-block">
                   <a href="https://github.com/google/nerfies/releases/tag/0.1"
@@ -189,7 +189,7 @@
     </div>
   </section>
 
-  <img src="static/images/method.png" class="hero-figure" alt="APFD framework">
+  <img src="static/images/method.png" class="hero-figure" alt="AQUACOD framework">
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -201,20 +201,20 @@
             <p>
               Quantum computing has emerged as a potential tool for solving combinatorial optimization problems, such as
               drone scheduling. Quantum methods typically transform the problem into a quadratic unconstrained binary
-              optimization (QUBO) form before solving. However, a notable limitation of this transformation is its
-              requirement that there are no constraints, which drone scheduling and many other problems do not naturally
-              satisfy. A common workaround is to embed the constraints in the objective function via penalty terms,
-              thereby yielding an equivalent unconstrained problem. The remaining challenge is that the appropriate
-              penalty coefficient varies significantly from one problem to another.
+              optimization (QUBO) form before solving it. However, a notable limitation of this transformation is its
+              requirement that the problem be unconstrained, which drone scheduling and many other problems do not
+              naturally satisfy. A common workaround is to embed the constraints in the objective function via penalty
+              terms, thereby yielding an equivalent unconstrained problem. The remaining challenge is that the
+              appropriate penalty coefficient varies significantly from one problem to another.
             </p>
             <p>
-              To determine it, we propose an agentic framework in which LLM-based agents automatically discover and
-              design penalty functions for drone scheduling. The agents iteratively propose, evaluate, and refine them
-              in response to solver feedback, reducing reliance on manual tuning.
+              To determine it, we propose an agentic framework where large language model (LLM)-based agents
+              automatically discover and design penalty functions for drone scheduling. The agents iteratively propose,
+              evaluate, and refine them in response to solver feedback, reducing reliance on manual tuning.
             </p>
             <p>
-              The experimental results show that the agentic method improves the solution on up to 36 cases while
-              degrading only 11, demonstrating that agentic design is a viable alternative to manual tuning.
+              The experimental results show that the agentic method improves the solution, demonstrating that agentic
+              design is a viable alternative to manual tuning.
             </p>
           </div>
         </div>
