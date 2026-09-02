@@ -163,7 +163,8 @@
                   </a>
                 </span> -->
                 <span class="link-block">
-                  <a href="https://openaccess.thecvf.com/content/CVPR2026F/papers/Nguyen_QuPAINT_Physics-Aware_Instruction_Tuning_Approach_to_Quantum_Material_Discovery_CVPRF_2026_paper.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://openaccess.thecvf.com/content/CVPR2026F/papers/Nguyen_QuPAINT_Physics-Aware_Instruction_Tuning_Approach_to_Quantum_Material_Discovery_CVPRF_2026_paper.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -234,16 +235,36 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Reliable identification of two-dimensional (2D) quantum materials from optical microscopy is challenging due to domain shifts between synthetic training data and real laboratory images. The observed appearance of a flake depends not only on its material and thickness, but also on substrate properties, illumination, camera response, focus, noise, and other acquisition-specific factors. In this domain, artificial intelligence (AI) models are typically trained on limited, in-house datasets and may perform well under familiar conditions but degrade substantially when transferred across laboratories or imaging systems.
+              Reliable identification of two-dimensional (2D) quantum materials from optical microscopy is challenging
+              due to domain shifts between synthetic training data and real laboratory images. The observed appearance
+              of a flake depends not only on its material and thickness, but also on substrate properties, illumination,
+              camera response, focus, noise, and other acquisition-specific factors. In this domain, artificial
+              intelligence (AI) models are typically trained on limited, in-house datasets and may perform well under
+              familiar conditions but degrade substantially when transferred across laboratories or imaging systems.
             </p>
             <p>
-              To address this, we present a physics-aware multimodal framework for learning transferable representations of quantum material flakes. We first introduce a data generation approach, Synthia, that expands the physical and visual diversity of synthetic microscopy images while preserving layer-dependent optical behavior. Using the synthesized data, we construct QMat-Instruct, a physics-informed multimodal instruction dataset with structured reasoning traces that relate visual observations to material properties, substrate conditions, and layer-dependent optical responses. These reasoning traces teach Multimodal Large Language Models to interpret flake appearance and thickness. To generate this supervision, we employ annotation-conditioned visual rationalization, where a strong Vision-Language Model explains verified flake annotations using only observable optical cues. We then introduce Physics-Aware Instruction Tuning (QuPAINT), a multimodal architecture that uses a Physics-Informed Attention approach to fuse visual embeddings with optical priors, enabling more robust and discriminative flake representations.&#x20;
+              To address this, we present a physics-aware multimodal framework for learning transferable representations
+              of quantum material flakes. We first introduce a data generation approach, Synthia, that expands the
+              physical and visual diversity of synthetic microscopy images while preserving layer-dependent optical
+              behavior. Using the synthesized data, we construct QMat-Instruct, a physics-informed multimodal
+              instruction dataset with structured reasoning traces that relate visual observations to material
+              properties, substrate conditions, and layer-dependent optical responses. These reasoning traces teach
+              Multimodal Large Language Models to interpret flake appearance and thickness. To generate this
+              supervision, we employ annotation-conditioned visual rationalization, where a strong Vision-Language Model
+              explains verified flake annotations using only observable optical cues. We then introduce Physics-Aware
+              Instruction Tuning (QuPAINT), a multimodal architecture that uses a Physics-Informed Attention approach to
+              fuse visual embeddings with optical priors, enabling more robust and discriminative flake
+              representations.&#x20;
             </p>
             <p>
-              This work provides a unified framework for physics-guided multimodal learning under limited supervision and establishes a foundation for automated analysis of quantum materials across diverse experimental settings. In addition to detection-based evaluation, we assess QuPAINT through counting, visual grounding, and analysis of image-specific reasoning.&#x20;
+              This work provides a unified framework for physics-guided multimodal learning under limited supervision
+              and establishes a foundation for automated analysis of quantum materials across diverse experimental
+              settings. In addition to detection-based evaluation, we assess QuPAINT through counting, visual grounding,
+              and analysis of image-specific reasoning.&#x20;
             </p>
             <p>
-              Using QF-Bench, we further evaluate generalization to a material that is completely excluded from training across a benchmark spanning multiple materials, substrates, and imaging settings.
+              Using QF-Bench, we further evaluate generalization to a material that is completely excluded from training
+              across a benchmark spanning multiple materials, substrates, and imaging settings.
             </p>
           </div>
         </div>
@@ -822,7 +843,7 @@
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
+      <h2 class="title">Conference BibTeX</h2>
       <pre><code>@misc{nguyen2026qupaintphysicsawareinstructiontuning,
       title={QuPAINT: Physics-Aware Instruction Tuning Approach to Quantum Material Discovery}, 
       author={Xuan-Bac Nguyen and Hoang-Quan Nguyen and Sankalp Pandey and Tim Faltermeier and Nicholas Borys and Hugh Churchill and Khoa Luu},
