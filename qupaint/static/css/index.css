@@ -703,6 +703,43 @@ p.gallery-title { margin-top: -0.2rem; }
   font-weight: 600;
 }
 
+.journal-status-banner {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.15rem auto 0;
+  padding: 0.28rem 0.75rem 0.28rem 0.35rem;
+  border: 1px solid #d9dee8;
+  border-radius: 999px;
+  background: #f8f9fb;
+  font-family: 'Google Sans', sans-serif;
+}
+
+.journal-status-pill {
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: #e9edf4;
+  color: #465166;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.journal-status-text {
+  color: #5d6677;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.conference-author-note {
+  margin: 0.42rem auto 0.8rem;
+  color: #7a8190;
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
 .links-group-label {
   margin: 1.4rem 0 0.5rem;
   color: #6b7280;
