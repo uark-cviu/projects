@@ -2,28 +2,15 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-.team-avatar {
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-.team-avatar img {
-  width: 128px;
-  height: 128px;
-  object-fit: cover;
-  display: block;
-}
-
 
 .footer .icon-link {
-  font-size: 25px;
-  color: #000;
+    font-size: 25px;
+    color: #000;
 }
 
 .link-block a {
-  margin-top: 5px;
-  margin-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .dnerf {
@@ -41,7 +28,8 @@ body {
 }
 
 
-.publication-title {}
+.publication-title {
+}
 
 .publication-banner {
   max-height: parent;
@@ -56,67 +44,71 @@ body {
   object-fit: fit;
 }
 
-.publication-header .hero-body {}
+.publication-header .hero-body {
+}
 
 .publication-title {
-  font-family: 'Google Sans', sans-serif;
+    font-family: 'Google Sans', sans-serif;
 }
 
 .publication-authors {
-  font-family: 'Google Sans', sans-serif;
+    font-family: 'Google Sans', sans-serif;
 }
 
 .publication-venue {
-  color: #555;
-  width: fit-content;
-  font-weight: bold;
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
 }
 
 .publication-awards {
-  color: #ff3860;
-  width: fit-content;
-  font-weight: bolder;
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
 }
 
-.publication-authors {}
+.publication-authors {
+}
 
 .publication-authors a {
-  color: hsl(204, 86%, 53%) !important;
+   color: hsl(204, 86%, 53%) !important;
 }
 
 .publication-authors a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .author-block {
   display: inline-block;
 }
 
-.publication-banner img {}
+.publication-banner img {
+}
 
 .publication-authors {
   /*color: #4286f4;*/
 }
 
 .publication-video {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
 
-  overflow: hidden;
-  border-radius: 10px !important;
+    overflow: hidden;
+    border-radius: 10px !important;
 }
 
 .publication-video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.publication-body img {}
+.publication-body img {
+}
 
 .results-carousel {
   overflow: hidden;
@@ -146,7 +138,8 @@ body {
   border-radius: 5px;
 }
 
-.interpolation-video-column {}
+.interpolation-video-column {
+}
 
 .interpolation-panel .slider {
   margin: 0 !important;
@@ -159,18 +152,19 @@ body {
 #interpolation-image-wrapper {
   width: 100%;
 }
-
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
 
+/* ----------------------------
+   Gallery (top 6) - no dead space, clear selection
+---------------------------- */
 .image-gallery {
   /* border: 1px solid #e6e8eb; */
   border-radius: 14px;
   background: white;
   padding: 10px;
-  height: auto;
-  /* match chat height */
+  height: auto;              /* match chat height */
   overflow: auto;
 }
 
@@ -201,21 +195,21 @@ body {
 
 .thumb:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
   border-color: #dbe3ee;
 }
 
 .thumb.is-selected {
   border-color: hsl(204, 86%, 53%);
-  box-shadow: 0 0 0 3px rgba(50, 115, 220, 0.18), 0 12px 26px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 0 0 3px rgba(50,115,220,0.18), 0 12px 26px rgba(0,0,0,0.10);
 }
 
 .thumb-overlay {
   position: absolute;
   left: 8px;
   bottom: 8px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(0,0,0,0.05);
   border-radius: 999px;
   padding: 4px 10px;
   font-size: 0.72rem;
@@ -223,15 +217,12 @@ body {
   color: #374151;
 }
 
-.gallery-title {
-  margin-bottom: 0.3rem !important;
-  text-align: center;
-}
+.gallery-title { margin-bottom: 0.3rem !important; text-align: center; }
+p.gallery-title { margin-top: -0.2rem; }
 
-p.gallery-title {
-  margin-top: -0.2rem;
-}
-
+/* ----------------------------
+   Chat (auto-generated)
+---------------------------- */
 .chat-window.box {
   /* background: #f5f7f9; */
   border: 1px solid #e6e8eb;
@@ -255,38 +246,29 @@ p.gallery-title {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.95); /* Matches your white theme */
   pointer-events: none;
   z-index: 10;
   opacity: 1;
   transition: opacity 300ms ease;
-  border-radius: 14px;
+  border-radius: 14px; /* Matches the parent container rounding */
 }
 
+/* Ensure it disappears correctly when hidden */
 .chat-placeholder.is-hidden {
   opacity: 0;
   visibility: hidden;
 }
 
+/* Optional: Slight animation to the icon while waiting */
 .chat-placeholder .icon i {
   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: scale(1.1);
-    opacity: 0.7;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 
@@ -317,8 +299,9 @@ p.gallery-title {
   padding: 14px;
 }
 
+/* Chat placeholder overlay */
 .chat-box {
-  position: relative;
+  position: relative; /* allows absolute overlay */
 }
 
 .chat-messages {
@@ -342,20 +325,15 @@ p.gallery-title {
   margin-bottom: 10px;
 }
 
-.msg-row.user {
-  justify-content: flex-end;
-}
-
-.msg-row.bot {
-  justify-content: flex-start;
-}
+.msg-row.user { justify-content: flex-end; }
+.msg-row.bot { justify-content: flex-start; }
 
 .bubble {
   max-width: 85%;
   border-radius: 14px;
   padding: 10px 12px;
   line-height: 1.35rem;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0,0,0,0.06);
 }
 
 .bubble.user {
@@ -372,8 +350,7 @@ p.gallery-title {
 
 .bubble .brain-region {
   font-weight: 800;
-  color: #f59e0b !important;
-  /* orange */
+  color: #f59e0b !important; /* orange */
 }
 
 
@@ -390,8 +367,12 @@ p.gallery-title {
   color: #000000;
 }
 
+/* ----------------------------
+   Brain viewer panel
+---------------------------- */
 .brain-panel {
   margin: 14px auto 0 auto;
+  /* border: 1px solid #e6e8eb; */
   border-radius: 14px;
   overflow: hidden;
   width: 57%;
@@ -400,6 +381,7 @@ p.gallery-title {
 
 .brain-header {
   background: white;
+  /* border-bottom: 1px solid #eef0f3; */
   padding: 12px 14px;
   display: flex;
   justify-content: space-between;
@@ -451,6 +433,9 @@ p.gallery-title {
   gap: 6px;
 }
 
+/* ----------------------------
+   MINI browser
+---------------------------- */
 .mini-header {
   padding: 10px 12px;
   border-bottom: 1px solid #eef0f3;
@@ -463,17 +448,18 @@ p.gallery-title {
   color: #111827;
 }
 
+/* make preview box a fixed-height flex column */
 .mini-preview-box {
   height: 520px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  /* prevents stretching */
+  overflow: hidden; /* prevents stretching */
 }
 
+/* allow the JSON area to take remaining space and scroll */
 .mini-preview-box .mini-pre {
   flex: 1;
-  overflow: auto;
+  overflow: auto;      /* scroll inside */
   margin: 0;
   border-radius: 0;
 }
@@ -485,22 +471,25 @@ p.gallery-title {
   margin-top: 2px;
 }
 
+/* Left MINI samples panel: fixed height, grid scrolls */
 .mini-samples-box {
   height: 520px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: hidden; /* keep the box fixed */
 }
 
+/* let the header be natural height */
 .mini-samples-box .mini-header {
   flex: 0 0 auto;
 }
 
+/* grid takes the rest and scrolls */
 .mini-samples-box .mini-grid {
   flex: 1 1 auto;
   overflow-y: auto;
-  overflow-x: hidden;
-  height: auto;
+  overflow-x: hidden; /* optional */
+  height: auto;       /* important: stop calc-based height */
 }
 
 
@@ -536,13 +525,13 @@ p.gallery-title {
 
 .mini-thumb:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
   border-color: #dbe3ee;
 }
 
 .mini-thumb.is-selected {
   border-color: hsl(204, 86%, 53%);
-  box-shadow: 0 0 0 3px rgba(50, 115, 220, 0.18), 0 12px 26px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 0 0 3px rgba(50,115,220,0.18), 0 12px 26px rgba(0,0,0,0.10);
 }
 
 .mini-pre {
@@ -557,53 +546,43 @@ p.gallery-title {
 }
 
 
+/* Prevent the MINI preview column from expanding the page */
 #mini-browser .columns,
 #mini-browser .column,
 #mini-browser .box {
   min-width: 0;
 }
 
-.column video {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.columns.is-variable.is-1 {
-  gap: 0.5rem;
-}
-
-.column .content p {
-  font-family: 'Google Sans', sans-serif;
-  color: #4a4a4a;
-}
-
+/* Force the JSON area to scroll instead of stretching layout */
 .mini-pre {
   max-width: 100%;
-  overflow: auto;
-  white-space: pre;
+  overflow: auto;        /* both x + y */
+  white-space: pre;      /* keep JSON formatting */
 }
 
+/* If your code element ever tries to stretch */
 .mini-pre code {
   white-space: pre;
 }
 
+/* Add to index.css */
 .coord-highlight {
-  color: #d97706;
+  color: #d97706; /* A nice distinct orange */
   font-weight: 700;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', monospace; /* Monospace font for coordinates looks better */
   background: rgba(217, 119, 6, 0.1);
   padding: 2px 4px;
   border-radius: 4px;
 }
 
+/* Gallery Selection Highlight */
 .thumb.is-selected {
   border: 3px solid #d97706 !important;
   box-shadow: 0 0 15px rgba(217, 119, 6, 0.4);
   transform: scale(1.02);
 }
 
+/* Coordinate Highlighting */
 .coord-highlight {
   color: #d97706;
   font-weight: 700;
@@ -620,7 +599,6 @@ p.gallery-title {
   padding: 15px;
   margin-bottom: 15px;
 }
-
 .interference-strip {
   display: flex;
   height: 20px;
@@ -629,6 +607,8 @@ p.gallery-title {
   margin-top: 10px;
 }
 
+/* PIA Visualizer Styles */
+/* Update these in your index.css */
 .pia-select {
   cursor: pointer;
   border-radius: 4px;
@@ -638,9 +618,7 @@ p.gallery-title {
   display: block;
 }
 
-.pia-select:hover {
-  border-color: #d97706;
-}
+.pia-select:hover { border-color: #d97706; }
 
 .pia-select.is-active {
   border-color: #ff9d00 !important;
@@ -677,7 +655,7 @@ p.gallery-title {
 .comparison-half img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: contain; /* Ensures square images fit without cropping */
 }
 
 .view-tag {
@@ -686,35 +664,255 @@ p.gallery-title {
   left: 8px;
   font-size: 10px;
   font-weight: 800;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   color: white;
   padding: 3px 7px;
   z-index: 10;
   letter-spacing: 1px;
 }
+/* ============================================================
+   Journal-extension additions: acceptance banner, grouped link
+   rows, reasoning comparison, QF-Bench stats.
+   Legend colours match the annotation overlay in the grid figure.
+   ============================================================ */
 
+.acceptance-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1rem auto 0.4rem;
+  padding: 0.35rem 0.9rem 0.35rem 0.4rem;
+  border: 1px solid #b8e6c8;
+  border-radius: 999px;
+  background: #f2fbf5;
+  font-family: 'Google Sans', sans-serif;
+}
+.acceptance-pill {
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  background: #1f9d55;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.acceptance-text {
+  color: #14532d;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
 
-.hero-figure,
-.pia-figure {
+.links-group-label {
+  margin: 1.4rem 0 0.5rem;
+  color: #6b7280;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.links-group-label.is-secondary { color: #9ca3af; }
+
+/* Placeholder buttons: legible, obviously not yet live. */
+.button.is-pending {
+  background: transparent !important;
+  border: 1px dashed #9ca3af !important;
+  color: #6b7280 !important;
+  cursor: default;
+}
+.button.is-pending:hover { background: #f3f4f6 !important; }
+.pending-tag {
+  margin-left: 0.45rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 4px;
+  background: #e5e7eb;
+  color: #6b7280;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ---------- reasoning comparison ---------- */
+.reasoning-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+  margin: 1.6rem 0 0.9rem;
+}
+@media screen and (max-width: 768px) {
+  .reasoning-compare { grid-template-columns: 1fr; }
+}
+.reason-col {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+.reason-head {
+  padding: 0.6rem 0.9rem;
+  color: #fff;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.reason-head.is-template { background: #8a8f98; }
+.reason-head.is-grounded { background: #3298dc; }
+.reason-sub {
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.85;
+  text-transform: uppercase;
+}
+.reason-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.95rem 1.05rem 0.8rem;
+}
+.reason-span {
+  margin-bottom: 0.8rem;
+  color: #374151;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  text-align: justify;
+}
+.reason-meta {
+  margin: 0;
+  padding-top: 0.55rem;
+  border-top: 1px solid #f3f4f6;
+  color: #9ca3af;
+  font-size: 0.76rem;
+}
+.reason-shared {
+  padding: 0.85rem 1.05rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fafafa;
+}
+.reason-shared-label {
   display: block;
-  margin: 0 auto;
-  width: min(900px, 90vw);
-  max-width: 100%;
+  margin-bottom: 0.4rem;
+  color: #6b7280;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.reason-shared code {
+  display: block;
+  padding: 0;
+  overflow-x: auto;
+  background: transparent;
+  color: #374151;
+  font-size: 0.79rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ---------- QF-Bench ---------- */
+.qf-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.9rem;
+  margin: 1.4rem 0 1.6rem;
+}
+@media screen and (max-width: 768px) {
+  .qf-stats { grid-template-columns: repeat(2, 1fr); }
+}
+.qf-stat {
+  padding: 0.95rem 0.6rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  text-align: center;
+}
+.qf-num {
+  display: block;
+  color: #1f2937;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+}
+.qf-lab {
+  display: block;
+  margin-top: 0.2rem;
+  color: #6b7280;
+  font-size: 0.76rem;
+  letter-spacing: 0.03em;
+}
+
+.qf-table-wrap { overflow-x: auto; margin-bottom: 1.8rem; }
+.qf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+.qf-table th,
+.qf-table td { padding: 0.5rem 0.7rem; text-align: right; }
+.qf-table th:first-child,
+.qf-table td:first-child { text-align: left; }
+.qf-table thead th {
+  border-bottom: 2px solid #d1d5db;
+  color: #374151;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.qf-table tbody tr { border-bottom: 1px solid #f3f4f6; }
+.qf-table tbody tr:hover { background: #fafafa; }
+.qf-table tfoot td {
+  border-top: 2px solid #d1d5db;
+  font-weight: 700;
+}
+
+.qf-figure { margin: 0; }
+.qf-figure img {
+  display: block;
+  width: 100%;
   height: auto;
+  border-radius: 10px;
 }
+.qf-figure figcaption {
+  margin-top: 0.8rem;
+  color: #6b7280;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  text-align: center;
+}
+.lg {
+  display: inline-block;
+  margin: 0 0.12rem;
+  padding: 0.05rem 0.45rem;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+.lg-mono  { background: #00b34a; }
+.lg-few   { background: #00aaff; }
+.lg-thick { background: #ff8c00; }
 
+/* Hero teaser figure: was unstyled and rendered at natural size (full bleed).
+   Capped to roughly half the viewport on desktop, full width on small screens. */
 .hero-figure {
-  width: min(1000px, 92vw);
+  display: block;
+  width: 52%;
+  min-width: 320px;
+  max-width: 900px;
+  height: auto;
+  margin: 0.5rem auto 2.5rem;
 }
-
-.pia-figure {
-  width: min(850px, 92vw);
-}
-
-@media (max-width: 768px) {
-
-  .hero-figure,
-  .pia-figure {
-    width: 96vw;
-  }
+@media screen and (max-width: 900px) {
+  .hero-figure { width: 92%; }
 }
