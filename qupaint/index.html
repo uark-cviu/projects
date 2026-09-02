@@ -101,11 +101,11 @@
               Material Discovery</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
+                <a href="https://www.sankalppandey.tech/">Sankalp Pandey</a><sup>1</sup>,</span>
+              <span class="author-block">
                 <a href="https://ngxbac.github.io/">Xuan Bac Nguyen</a><sup>1</sup>,</span>
               <span class="author-block">
                 <a href="https://nhquanqt.github.io/">Hoang-Quan Nguyen</a><sup>1</sup>,</span>
-              <span class="author-block">
-                <a href="https://www.sankalppandey.tech/">Sankalp Pandey</a><sup>1</sup>,</span>
               <span class="author-block">
                 <a href="https://www.boryslab.com/people-1">Tim Faltermeier</a><sup>2</sup>,
               </span>
@@ -127,6 +127,19 @@
               <span class="author-block"><sup>2</sup>University of Utah,</span>
               <span class="author-block"><sup>3</sup>Department of Physics, University of Arkansas</span>
             </div>
+
+            <div class="acceptance-banner">
+              <span class="acceptance-pill">Accepted</span>
+              <span class="acceptance-text">CVPR&nbsp;2026 &nbsp;&middot;&nbsp; Findings Track</span>
+            </div>
+            <div class="journal-status-banner" aria-label="Journal extension status">
+              <span class="journal-status-pill">Journal Extension</span>
+              <span class="journal-status-text">Under Review</span>
+            </div>
+            <p class="conference-author-note">
+              Conference version: Xuan Bac Nguyen, Hoang-Quan Nguyen, Sankalp Pandey, Tim Faltermeier, Nicholas Borys,
+              Hugh Churchill, and Khoa Luu.
+            </p>
             <p>
               <a class="mono-link" href="https://uark-cviu.github.io" target="_blank">
                 https://uark-cviu.github.io/
@@ -139,6 +152,7 @@
             </p>
 
             <div class="column has-text-centered">
+              <p class="links-group-label">CVPR 2026 &middot; Findings Track</p>
               <div class="publication-links">
                 <!-- <span class="link-block">
                   <a href="./static/tbd.html" class="external-link button is-normal is-rounded is-dark">
@@ -149,7 +163,8 @@
                   </a>
                 </span> -->
                 <span class="link-block">
-                  <a href="https://openaccess.thecvf.com/content/CVPR2026F/papers/Nguyen_QuPAINT_Physics-Aware_Instruction_Tuning_Approach_to_Quantum_Material_Discovery_CVPRF_2026_paper.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://openaccess.thecvf.com/content/CVPR2026F/papers/Nguyen_QuPAINT_Physics-Aware_Instruction_Tuning_Approach_to_Quantum_Material_Discovery_CVPRF_2026_paper.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -166,13 +181,39 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://uark-my.sharepoint.com/:f:/g/personal/sankalpp_uark_edu/IgDiKftTT9A4QbiZJgZy--GZAYOqZmG4MGUe126NJJ44uao?e=abizc6"
+                  <a href="https://drive.google.com/drive/folders/1MxII8ajBS2mX3LHPo0pN4aKZzgmrXdJx?usp=sharing"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-images"></i>
                     </span>
                     <span>Data</span>
                   </a>
+                </span>
+              </div>
+
+              <p class="links-group-label is-secondary">Journal Extension &middot; under review</p>
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark is-pending">
+                    <span class="icon"><i class="fas fa-file-alt"></i></span>
+                    <span>Paper</span>
+                    <span class="pending-tag">soon</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark is-pending">
+                    <span class="icon"><i class="fas fa-code-branch"></i></span>
+                    <span>Extended Code</span>
+                    <span class="pending-tag">soon</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark is-pending">
+                    <span class="icon"><i class="fas fa-database"></i></span>
+                    <span>QF-Bench</span>
+                    <span class="pending-tag">soon</span>
+                  </a>
+                </span>
               </div>
 
             </div>
@@ -182,7 +223,8 @@
     </div>
   </section>
 
-  <img src="static/images/architecture_3.png?v=2" class="hero-figure" alt="QuPAINT architecture">
+  <img src="static/images/qupaint_fig.png?v=2" class="hero-figure"
+    alt="QuPAINT overview: Synthia synthetic data generation, the QMat-Instruct dataset, and physics-aware instruction tuning">
 
 
   <section class="section">
@@ -193,16 +235,36 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Reliable identification of two-dimensional (2D) quantum materials from optical microscopy is challenging due to domain shifts between synthetic training data and real laboratory images. The observed appearance of a flake depends not only on its material and thickness, but also on substrate properties, illumination, camera response, focus, noise, and other acquisition-specific factors. In this domain, artificial intelligence (AI) models are typically trained on limited, in-house datasets and may perform well under familiar conditions but degrade substantially when transferred across laboratories or imaging systems.
+              Reliable identification of two-dimensional (2D) quantum materials from optical microscopy is challenging
+              due to domain shifts between synthetic training data and real laboratory images. The observed appearance
+              of a flake depends not only on its material and thickness, but also on substrate properties, illumination,
+              camera response, focus, noise, and other acquisition-specific factors. In this domain, artificial
+              intelligence (AI) models are typically trained on limited, in-house datasets and may perform well under
+              familiar conditions but degrade substantially when transferred across laboratories or imaging systems.
             </p>
             <p>
-              To address this, we present a physics-aware multimodal framework for learning transferable representations of quantum material flakes. We first introduce a data generation approach, Synthia, that expands the physical and visual diversity of synthetic microscopy images while preserving layer-dependent optical behavior. Using the synthesized data, we construct QMat-Instruct, a physics-informed multimodal instruction dataset with structured reasoning traces that relate visual observations to material properties, substrate conditions, and layer-dependent optical responses. These reasoning traces teach Multimodal Large Language Models to interpret flake appearance and thickness. To generate this supervision, we employ annotation-conditioned visual rationalization, where a strong Vision-Language Model explains verified flake annotations using only observable optical cues. We then introduce Physics-Aware Instruction Tuning (QuPAINT), a multimodal architecture that uses a Physics-Informed Attention approach to fuse visual embeddings with optical priors, enabling more robust and discriminative flake representations.&#x20;
+              To address this, we present a physics-aware multimodal framework for learning transferable representations
+              of quantum material flakes. We first introduce a data generation approach, Synthia, that expands the
+              physical and visual diversity of synthetic microscopy images while preserving layer-dependent optical
+              behavior. Using the synthesized data, we construct QMat-Instruct, a physics-informed multimodal
+              instruction dataset with structured reasoning traces that relate visual observations to material
+              properties, substrate conditions, and layer-dependent optical responses. These reasoning traces teach
+              Multimodal Large Language Models to interpret flake appearance and thickness. To generate this
+              supervision, we employ annotation-conditioned visual rationalization, where a strong Vision-Language Model
+              explains verified flake annotations using only observable optical cues. We then introduce Physics-Aware
+              Instruction Tuning (QuPAINT), a multimodal architecture that uses a Physics-Informed Attention approach to
+              fuse visual embeddings with optical priors, enabling more robust and discriminative flake
+              representations.&#x20;
             </p>
             <p>
-              This work provides a unified framework for physics-guided multimodal learning under limited supervision and establishes a foundation for automated analysis of quantum materials across diverse experimental settings. In addition to detection-based evaluation, we assess QuPAINT through counting, visual grounding, and analysis of image-specific reasoning.&#x20;
+              This work provides a unified framework for physics-guided multimodal learning under limited supervision
+              and establishes a foundation for automated analysis of quantum materials across diverse experimental
+              settings. In addition to detection-based evaluation, we assess QuPAINT through counting, visual grounding,
+              and analysis of image-specific reasoning.&#x20;
             </p>
             <p>
-              Using QF-Bench, we further evaluate generalization to a material that is completely excluded from training across a benchmark spanning multiple materials, substrates, and imaging settings.
+              Using QF-Bench, we further evaluate generalization to a material that is completely excluded from training
+              across a benchmark spanning multiple materials, substrates, and imaging settings.
             </p>
           </div>
         </div>
@@ -290,6 +352,193 @@
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Image-Grounded Reasoning Supervision</h2>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p>
+              Previously, we supervised reasoning with fixed templates. Every image in a layer category
+              received essentially the same explanation. We now generate an <strong>image-specific reasoning
+                trace</strong> for each training sample, produced by a vision&ndash;language model that is shown the
+              verified ground-truth annotations and asked to justify them from visible optical evidence alone.
+            </p>
+            <p>
+              The enumeration and the conclusion are constructed deterministically from the same annotations in
+              both arms, so <strong>the reasoning span is the only thing that differs</strong> between the two
+              supervision targets. Below is a real matched pair from the training corpus.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reasoning-compare">
+        <div class="reason-col">
+          <div class="reason-head is-template">Template-Based (Conference)</div>
+          <div class="reason-body">
+            <p class="reason-span">Given this flake region, I compare its brightness and color to the background.
+              If it is faint and semi-transparent, then it is a mono layer.</p>
+          </div>
+        </div>
+        <div class="reason-col">
+          <div class="reason-head is-grounded">Image-Grounded (Journal)</div>
+          <div class="reason-body">
+            <p class="reason-span">The substrate exhibits a uniform purple background with subtle variations in hue
+              and intensity, indicative of interference effects from the SiO<sub>2</sub> layer. The monolayer flakes
+              appear as faint, slightly brighter blue regions with minimal contrast against the substrate, showing the
+              lowest optical contrast and most subdued interference colors compared to thicker flakes. Thicker flakes
+              display stronger color variations and higher contrast, while monolayers maintain near-transparency
+              relative to the substrate and thicker flakes, consistent with their reduced thickness and corresponding
+              optical properties.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reason-shared">
+        <code>&lt;CONCLUSION&gt; The answer is: Yes. The mono layers are at <box>7.7, 20.59, 3.85, 4.24</box> <box>91.78, 78.1, 3.14, 2.76</box> <box>69.83, 90.66, 6.9, 2.0</box> &lt;/CONCLUSION&gt;</code>
+      </div>
+
+      <div class="columns is-centered mt-5">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p>
+              The generated text is constrained to what is visible in the image such as relative contrast, color,
+              boundaries, and appearance against the surrounding substrate. It is explicitly barred from
+              invoking Raman, AFM, photoluminescence, or any other non-optical modality. It is also kept away from
+              absolute colour values, so the same supervision transfers across materials and substrate configurations.
+            </p>
+            <p>
+              The descriptions track measurable optics rather than drifting freely. Image whose descriptions use
+              low-contrast vocabulary (<em>faint</em>, <em>minimal</em>, <em>subtle</em>) have a median flake
+              &Delta;E of 20.1, against 21.6 for high-contrast vocabulary (<em>distinct</em>, <em>pronounced</em>,
+              <em>sharp</em>). This represents a significant separation under a Mann&ndash;Whitney test
+              (<em>p</em>&nbsp;=&nbsp;0.03, <em>n</em>&nbsp;=&nbsp;1,186).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">QF-Bench</h2>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p>
+              QF-Bench is our evaluation benchmark for quantum material characterization: eight 2D materials imaged
+              under a range of microscopy and substrate conditions, with bounding-box and layer annotations for
+              mono-layer (1L), few-layer (2&ndash;4L), and thick (5+L) flakes. Beyond detection AP, it carries tracks
+              for counting, mono-layer presence, visual grounding, and instruction following.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="qf-stats">
+        <div class="qf-stat"><span class="qf-num">8,854</span><span class="qf-lab">images</span></div>
+        <div class="qf-stat"><span class="qf-num">280,526</span><span class="qf-lab">annotated flakes</span></div>
+        <div class="qf-stat"><span class="qf-num">8</span><span class="qf-lab">materials</span></div>
+        <div class="qf-stat"><span class="qf-num">2,546</span><span class="qf-lab">mono-layer</span></div>
+      </div>
+
+      <div class="qf-table-wrap">
+        <table class="qf-table">
+          <thead>
+            <tr>
+              <th>Material</th>
+              <th>Mono</th>
+              <th>Few</th>
+              <th>Thick</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BN</td>
+              <td>13</td>
+              <td>111</td>
+              <td>10,100</td>
+              <td>10,224</td>
+            </tr>
+            <tr>
+              <td>Graphene</td>
+              <td>1,856</td>
+              <td>2,081</td>
+              <td>4,270</td>
+              <td>8,207</td>
+            </tr>
+            <tr>
+              <td>MoS<sub>2</sub></td>
+              <td>246</td>
+              <td>536</td>
+              <td>108,352</td>
+              <td>109,134</td>
+            </tr>
+            <tr>
+              <td>MoSe<sub>2</sub></td>
+              <td>24</td>
+              <td>32</td>
+              <td>1,327</td>
+              <td>1,383</td>
+            </tr>
+            <tr>
+              <td>MoWSe<sub>2</sub></td>
+              <td>9</td>
+              <td>35</td>
+              <td>293</td>
+              <td>337</td>
+            </tr>
+            <tr>
+              <td>WS<sub>2</sub></td>
+              <td>43</td>
+              <td>5</td>
+              <td>2,144</td>
+              <td>2,192</td>
+            </tr>
+            <tr>
+              <td>WSe<sub>2</sub></td>
+              <td>207</td>
+              <td>35</td>
+              <td>6,195</td>
+              <td>6,437</td>
+            </tr>
+            <tr>
+              <td>WTe<sub>2</sub></td>
+              <td>148</td>
+              <td>582</td>
+              <td>141,882</td>
+              <td>142,612</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <td>2,546</td>
+              <td>3,417</td>
+              <td>274,563</td>
+              <td>280,526</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <figure class="qf-figure">
+        <img src="./static/images/qfbench_grid.jpg" alt="Sixteen annotated QF-Bench micrographs in a four-by-four grid">
+        <figcaption>
+          Sixteen QF-Bench micrographs. Flake thickness annotations are colour-coded:
+          <span class="lg lg-mono">Mono</span>
+          <span class="lg lg-few">Few</span>
+          <span class="lg lg-thick">Thick</span>.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -594,7 +843,7 @@
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
+      <h2 class="title">Conference BibTeX</h2>
       <pre><code>@misc{nguyen2026qupaintphysicsawareinstructiontuning,
       title={QuPAINT: Physics-Aware Instruction Tuning Approach to Quantum Material Discovery}, 
       author={Xuan-Bac Nguyen and Hoang-Quan Nguyen and Sankalp Pandey and Tim Faltermeier and Nicholas Borys and Hugh Churchill and Khoa Luu},
