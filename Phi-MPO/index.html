@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Φ-MPO | Agentic Multi-Turn Reasoning: A Fairness Approach</title>
+  <meta name="description" content="Φ-MPO (Fair Multi-Level Preference Optimization) learns multi-turn agentic reasoning through trajectory-level preferences, aligned state-level supervision, and fairness weighting. NeurIPS 2026.">
+  <meta name="theme-color" content="#363636">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Φ-MPO: Agentic Multi-Turn Reasoning: A Fairness Approach">
+  <meta property="og:description" content="Fair Multi-Level Preference Optimization for long-horizon reasoning and imbalanced data. Accepted to NeurIPS 2026.">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700%7CNoto+Sans:400,600,700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="project-nav" aria-label="Main navigation">
+    <a href="https://uark-cviu.github.io/">CVIU Lab</a>
+    <details class="related-research">
+      <summary>Our Related Research</summary>
+      <div class="related-links">
+        <a href="https://uark-cviu.github.io/projects/Fai-DPO/">Φ-DPO</a>
+        <a href="https://uark-cviu.github.io/projects/DirectedTokens/">DirectedTokens</a>
+        <a href="https://uark-cviu.github.io/projects/MANGO/">MANGO</a>
+      </div>
+    </details>
+  </nav>
+  <main id="main">
+    <header class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop has-text-centered">
+          <p class="method-name">Φ-MPO <span>Fair Multi-Level Preference Optimization</span></p>
+          <h1 class="title is-1 publication-title">Agentic Multi-Turn Reasoning:<br class="desktop-break"> A Fairness Approach</h1>
+          <div class="publication-authors is-size-5">
+            <span class="author-block">Thanh-Dat Truong<sup>1</sup>,</span>
+            <span class="author-block">Sankalp Pandey<sup>1</sup>,</span>
+            <span class="author-block">Hugh Churchill<sup>2</sup>,</span>
+            <span class="author-block">Jackson Cothren<sup>3</sup>,</span>
+            <span class="author-block">Marios Savvides<sup>4</sup>,</span>
+            <span class="author-block">Khoa Luu<sup>1</sup></span>
+          </div>
+          <div class="affiliations">
+            <span><sup>1</sup>CVIU Lab, University of Arkansas</span>
+            <span><sup>2</sup>Department of Physics, University of Arkansas</span>
+            <span><sup>3</sup>Department of Geosciences, University of Arkansas</span>
+            <span><sup>4</sup>Carnegie Mellon University</span>
+          </div>
+          <p class="venue">Accepted to NeurIPS 2026</p>
+          <div class="publication-links">
+            <!-- Add verified Paper / arXiv and Code URLs here when available. -->
+            <a class="button is-dark is-rounded" href="#method">Method</a>
+            <a class="button is-dark is-rounded" href="#results">Results</a>
+            <a class="button is-dark is-rounded" href="#BibTeX">BibTeX</a>
+          </div>
+          <figure class="teaser">
+            <a href="static/images/highlight-results-v6.jpg" aria-label="Open the overview figure at full resolution">
+              <img src="static/images/highlight-results-v6.jpg" width="5954" height="2620" alt="Overview of Φ-MPO, comparing its benchmark performance and support for long-horizon reasoning and data imbalance with prior approaches." fetchpriority="high">
+            </a>
+            <figcaption>Learning to reason across multiple turns, with supervision for intermediate decisions and balanced emphasis on hard reasoning pairs.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </header>
+
+    <section class="section band" id="highlights" aria-labelledby="highlights-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered" id="highlights-title">Highlights</h2>
+        <div class="content">
+          <ul>
+            <li><strong>Multi-level preference learning:</strong> combine trajectory-level preferences with aligned state-level comparisons to improve credit assignment over long reasoning horizons.</li>
+            <li><strong>Fairness under data imbalance:</strong> focal weighting reduces the influence of frequent, easy pairs and preserves learning from hard, informative reasoning decisions.</li>
+            <li><strong>Theoretical analysis:</strong> characterize the shared pairwise optimization direction of DPO and GRPO under the paper’s assumptions, and show how the fair objective suppresses easy-majority dominance.</li>
+            <li><strong>Strong results across four task families:</strong> Φ-MPO improves accuracy over Flow-GRPO on all ten reported benchmarks with the Qwen2.5-7B-Instruct backbone.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="abstract" aria-labelledby="abstract-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered" id="abstract-title">Abstract</h2>
+        <div class="content abstract"><p>Recent advances in Large Language Models (LLMs) have enabled agentic systems capable of solving complex tasks through multi-turn planning, tool use, verification, and memory updates. However, learning agentic systems remains difficult due to two fundamental challenges, i.e., (1) long-horizon credit assignment, where supervision is available only at the final outcome, and (2) imbalanced data distributions, where dominant data patterns bias optimization and weaken adaptation to rare but informative reasoning behaviors. In this paper, we propose Fair Multi-Level Preference Optimization (Fair-MPO or Φ-MPO), a new preference optimization framework for agentic learning. We first show that Multi-Level Preference Optimization provides a principled and more computationally efficient framework for long-horizon reasoning. Then, we introduce a Fair Multi-Level Objective that addresses imbalance in agentic learning. We provide a comprehensive theoretical analysis demonstrating that our approach addresses both long-horizon reasoning and data imbalance. Our experiments on agentic reasoning benchmarks demonstrate that our approach achieves State-of-the-Art (SOTA) performance. \begin{figure}[H] \centering \vspace{-5mm} \includegraphics[width=0.8\linewidth]{figures/highlight-results-v6.jpg} \caption{\textbf{Overview of the proposed Φ-MPO approach.} Left: Φ-MPO consistently outperforms GPT-4o, AgentFlow + FlowGRPO across four benchmarks. Right: Compared with DPO and Flow-GRPO, Φ-MPO addresses both long-horizon reasoning and imbalanced problems. } \label{fig:highlight} \vspace{-6mm} \end{figure}</p></div>
+      </div>
+    </section>
+
+    <section class="section band" id="method" aria-labelledby="method-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered" id="method-title">The Φ-MPO Framework</h2>
+        <div class="content"><p>The agent coordinates an <strong>Action Planner</strong>, <strong>Tool Executor</strong>, <strong>Execution Verifier</strong>, and <strong>Solution Generator</strong> through shared, evolving memory. Φ-MPO trains the planner from preferences over both complete trajectories and aligned intermediate reasoning states.</p></div>
+        <figure>
+          <a href="static/images/framework-v2.jpg" aria-label="Open the Φ-MPO framework figure at full resolution"><img src="static/images/framework-v2.jpg" width="5287" height="1474" loading="lazy" alt="The Φ-MPO framework: multi-turn agentic interaction, preference construction, and optimization using trajectory-level DPO and fair multi-level preferences."></a>
+          <figcaption>The proposed Φ-MPO framework. Select any figure to view it at full resolution.</figcaption>
+        </figure>
+        <div class="content method-explanation">
+          <h3 class="title is-5">From final outcomes to intermediate decisions</h3>
+          <p>Trajectory-level DPO encourages successful complete rollouts. Multi-Level Preference Optimization adds comparisons between semantically aligned states in preferred and dispreferred trajectories, providing denser supervision for planning and tool use.</p>
+          <h3 class="title is-5">Balancing easy and hard preference pairs</h3>
+          <p>The fair objective weights each aligned pair by <span class="math">(1 − p)<sup>γ</sup></span>, where <span class="math">p</span> is its preference probability. This suppresses easy pairs that already have high preference probability. At <span class="math">γ = 0</span>, the objective reduces to standard MPO; the experiments use <span class="math">γ = 2</span>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="imbalance" aria-labelledby="imbalance-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered" id="imbalance-title">Why Data Imbalance Matters</h2>
+        <div class="content"><p>Topics, difficulty levels, and reasoning patterns occur at uneven frequencies in agentic training data. Dominant patterns produce many redundant trajectories, while successful rollouts for rare or difficult cases remain scarce. Φ-MPO addresses this imbalance during preference optimization.</p></div>
+        <figure class="medium-figure">
+          <a href="static/images/deepmat-data-dist-v3.jpg" aria-label="Open the data imbalance figure at full resolution"><img src="static/images/deepmat-data-dist-v3.jpg" width="2774" height="1613" loading="lazy" alt="Analysis of the DeepMath data distribution and the influence of data imbalance on model performance."></a>
+          <figcaption>The influence of imbalanced data, illustrated through the DeepMath analysis in the paper.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section band" id="results" aria-labelledby="results-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered" id="results-title">Experimental Results</h2>
+        <div class="content"><p>Evaluation spans <strong>knowledge-intensive search</strong>, <strong>agentic reasoning</strong>, <strong>mathematical reasoning</strong>, and <strong>scientific reasoning</strong>. With Qwen2.5-7B-Instruct, Φ-MPO reaches 81.6% on Bamboogle, 41.7% on GAIA, 50.0% on AIME24, and 86.0% on MedQA.</p></div>
+        <div class="table-container" tabindex="0" role="region" aria-label="Search and agentic reasoning accuracy table"><table class="table is-striped is-hoverable is-fullwidth"><caption>Search and agentic reasoning · Accuracy (%) ↑</caption><thead><tr><th scope="col">Method</th><th scope="col">Backbone / size</th><th scope="col">Bamboogle</th><th scope="col">2Wiki</th><th scope="col">HotpotQA</th><th scope="col">Musique</th><th scope="col">GAIA</th></tr></thead><tbody><tr><th scope="row">Qwen2.5-7B-Inst</th><td>7B</td><td>12.0</td><td>23.0</td><td>21.0</td><td>6.0</td><td>3.2</td></tr><tr><th scope="row">Qwen2.5-14B-Inst</th><td>14B</td><td>21.6</td><td>26.7</td><td>20.0</td><td>8.0</td><td>5.5</td></tr><tr><th scope="row">Qwen2.5-32B-Inst</th><td>32B</td><td>24.0</td><td>26.7</td><td>27.0</td><td>6.0</td><td>9.5</td></tr><tr><th scope="row">Llama-3.3-70B-Inst</th><td>70B</td><td>18.4</td><td>22.7</td><td>52.0</td><td>16.0</td><td>3.2</td></tr><tr><th scope="row">GPT-4o-mini</th><td>—</td><td>40.8</td><td>35.6</td><td>41.0</td><td>15.0</td><td>7.1</td></tr><tr><th scope="row">GPT-4o</th><td>—</td><td>68.8</td><td>49.5</td><td>54.0</td><td>24.0</td><td>17.3</td></tr><tr><th scope="row">SFT</th><td>7B-Inst</td><td>12.0</td><td>25.9</td><td>22.0</td><td>6.6</td><td>3.2</td></tr><tr><th scope="row">Iter-RetGen</th><td>7B-Inst</td><td>36.8</td><td>33.6</td><td>37.4</td><td>17.8</td><td>3.9</td></tr><tr><th scope="row">Search-R1</th><td>7B-Inst</td><td>43.2</td><td>38.2</td><td>37.0</td><td>14.6</td><td>19.1</td></tr><tr><th scope="row">ZeroSearch</th><td>7B-Base</td><td>27.8</td><td>35.2</td><td>34.6</td><td>18.0</td><td>16.5</td></tr><tr><th scope="row">ReSearch</th><td>7B-Base</td><td>42.4</td><td>47.6</td><td>43.5</td><td>22.3</td><td>17.3</td></tr><tr><th scope="row">StepSearch</th><td>7B-Base</td><td>40.0</td><td>36.6</td><td>38.6</td><td>22.6</td><td>-</td></tr><tr><th scope="row">VerlTool</th><td>7B-Base</td><td>46.4</td><td>45.3</td><td>44.8</td><td>19.3</td><td>11.2</td></tr><tr><th scope="row">AutoGen</th><td>7B-Inst</td><td>59.6</td><td>44.0</td><td>50.0</td><td>15.9</td><td>6.3</td></tr><tr><th scope="row">AgentFlow</th><td>7B-Inst</td><td>58.4</td><td>60.0</td><td>51.3</td><td>19.2</td><td>17.2</td></tr><tr><th scope="row">FlowGRPO</th><td>7B-Inst</td><td>69.6</td><td>77.2</td><td>57.0</td><td>25.3</td><td>33.1</td></tr><tr class="ours"><th scope="row">Φ-MPO</th><td>7B-Inst</td><td>81.6</td><td>81.5</td><td>69.0</td><td>35.0</td><td>41.7</td></tr><tr class="ours"><th scope="row">Φ-MPO</th><td>Qwen3.5-9B</td><td>85.6</td><td>85.0</td><td>77.0</td><td>40.0</td><td>49.6</td></tr></tbody></table></div>
+<div class="table-container" tabindex="0" role="region" aria-label="Mathematical and scientific reasoning accuracy table"><table class="table is-striped is-hoverable is-fullwidth"><caption>Mathematical and scientific reasoning · Accuracy (%) ↑</caption><thead><tr><th scope="col">Method</th><th scope="col">Backbone / size</th><th scope="col">AIME24</th><th scope="col">AMC23</th><th scope="col">GameOf24</th><th scope="col">GPQA</th><th scope="col">MedQA</th></tr></thead><tbody><tr><th scope="row">Qwen2.5-7B-Inst</th><td>7B</td><td>6.7</td><td>47.5</td><td>33.0</td><td>34.0</td><td>66.0</td></tr><tr><th scope="row">Qwen2.5-14B-Inst</th><td>14B</td><td>6.7</td><td>60.0</td><td>25.0</td><td>31.0</td><td>75.0</td></tr><tr><th scope="row">Llama-3.3-70B-Inst</th><td>70B</td><td>6.7</td><td>47.5</td><td>31.0</td><td>35.0</td><td>67.0</td></tr><tr><th scope="row">Llama-3.1-405B-Inst</th><td>405B</td><td>26.7</td><td>47.5</td><td>23.0</td><td>30.0</td><td>62.0</td></tr><tr><th scope="row">GPT-4o-mini</th><td>—</td><td>13.3</td><td>57.5</td><td>16.0</td><td>27.0</td><td>66.0</td></tr><tr><th scope="row">GPT-4o</th><td>—</td><td>13.3</td><td>60.0</td><td>32.0</td><td>31.0</td><td>60.0</td></tr><tr><th scope="row">SFT</th><td>7B-Inst</td><td>6.7</td><td>47.5</td><td>33.0</td><td>34.0</td><td>66.0</td></tr><tr><th scope="row">SimpleRL</th><td>7B-Base</td><td>16.7</td><td>60.0</td><td>33.0</td><td>45.0</td><td>65.0</td></tr><tr><th scope="row">Open-Reasoner</th><td>7B-Base</td><td>16.7</td><td>54.9</td><td>32.0</td><td>34.0</td><td>54.0</td></tr><tr><th scope="row">General-Reasoner</th><td>7B-Base</td><td>13.3</td><td>55.0</td><td>33.0</td><td>35.5</td><td>61.0</td></tr><tr><th scope="row">Luffy</th><td>7B-Inst</td><td>30.7</td><td>44.8</td><td>33.0</td><td>34.0</td><td>77.0</td></tr><tr><th scope="row">TIR</th><td>7B-Inst</td><td>10.0</td><td>50.0</td><td>33.0</td><td>42.0</td><td>76.8</td></tr><tr><th scope="row">ToRL</th><td>7B-Inst</td><td>20.0</td><td>60.0</td><td>31.0</td><td>35.0</td><td>76.5</td></tr><tr><th scope="row">AutoGen</th><td>7B-Inst</td><td>13.3</td><td>57.5</td><td>24.0</td><td>42.0</td><td>72.0</td></tr><tr><th scope="row">AgentFlow</th><td>7B-Inst</td><td>16.7</td><td>47.4</td><td>31.0</td><td>37.0</td><td>76.0</td></tr><tr><th scope="row">Flow-GRPO</th><td>7B-Inst</td><td>40.0</td><td>61.5</td><td>53.0</td><td>47.0</td><td>80.0</td></tr><tr class="ours"><th scope="row">Φ-MPO</th><td>7B-Inst</td><td>50.0</td><td>72.5</td><td>65.0</td><td>59.0</td><td>86.0</td></tr><tr class="ours"><th scope="row">Φ-MPO</th><td>Qwen3.5-9B</td><td>73.3</td><td>80.0</td><td>75.0</td><td>64.0</td><td>90.0</td></tr></tbody></table></div>
+        <p class="table-note">All accuracy values are reproduced from the paper. 7B-Inst: Qwen2.5-7B-Instruct; 7B-Base: Qwen2.5-7B-Base. A dash indicates an unreported score or an omitted proprietary model size. Tables scroll horizontally on smaller screens.</p>
+      </div>
+    </section>
+
+    <section class="section" id="ablation" aria-labelledby="ablation-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered" id="ablation-title">What Each Objective Contributes</h2>
+        <div class="content"><p>Adding multi-level supervision improves trajectory-level DPO. Adding the fairness objective improves accuracy further on all four ablation benchmarks.</p></div>
+        <div class="table-container" tabindex="0" role="region" aria-label="Objective ablation accuracy table">
+          <table class="table is-striped is-hoverable is-fullwidth">
+            <caption>Objective ablation · Qwen2.5-7B-Instruct · Accuracy (%) ↑</caption>
+            <thead><tr><th scope="col">Training objective</th><th scope="col">Bamboogle</th><th scope="col">2Wiki</th><th scope="col">GAIA</th><th scope="col">AIME24</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Trajectory-level DPO</th><td>61.6</td><td>61.5</td><td>21.3</td><td>30.0</td></tr>
+              <tr><th scope="row">+ Multi-level preferences (MPO)</th><td>76.0</td><td>76.0</td><td>36.2</td><td>43.3</td></tr>
+              <tr class="ours"><th scope="row">+ Fairness weighting (Φ-MPO)</th><td>81.6</td><td>81.5</td><td>41.7</td><td>50.0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band" id="case-study" aria-labelledby="case-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered" id="case-title">Multi-Turn Reasoning in Action</h2>
+        <figure class="medium-figure">
+          <a href="static/images/result-v2.jpg" aria-label="Open the reasoning case study at full resolution"><img src="static/images/result-v2.jpg" width="3616" height="2649" loading="lazy" alt="Case study from the paper showing a multi-turn reasoning example for Φ-MPO."></a>
+          <figcaption>A qualitative case study from the paper.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX" aria-labelledby="bibtex-title">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3" id="bibtex-title">BibTeX</h2>
+        <pre><code>@inproceedings{truong2026agentic,
+  title={Agentic Multi-Turn Reasoning: A Fairness Approach},
+  author={Truong, Thanh-Dat and Pandey, Sankalp and Churchill, Hugh and
+          Cothren, Jackson and Savvides, Marios and Luu, Khoa},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2026}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container has-text-centered content">
+      <p>This project page follows our <a href="https://uark-cviu.github.io/projects/Fai-DPO/">Φ-DPO</a> website template, originally adapted from <a href="https://nerfies.github.io/">Nerfies</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
