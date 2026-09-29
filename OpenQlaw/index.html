@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-    content="OpenQlaw is an agentic AI assistant for analysis of 2D quantum materials that combines QuPAINT, deterministic tools, and persistent memory for practical lab-floor workflows.">
-  <meta name="keywords" content="OpenQlaw, QuPAINT, 2D quantum materials, agentic AI, microscopy">
+    content="OpenQlaw is a tool-using agentic AI system for 2D quantum material analysis that pairs the QuPAINT physics-aware expert with image-scoped observation records and deterministic scientific operations.">
+  <meta name="keywords"
+    content="OpenQlaw, QuPAINT, 2D quantum materials, agentic AI, tool use, scientific image analysis, microscopy">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OpenQlaw: An Agentic AI Assistant for Analysis of 2D Quantum Materials</title>
 
@@ -39,6 +40,8 @@
               <span class="author-block">
                 <a href="https://www.sankalppandey.tech/">Sankalp Pandey</a><sup>1</sup>,</span>
               <span class="author-block">
+                <a href="https://truongthanhdat.github.io/">Thanh-Dat Truong</a><sup>1</sup>,</span>
+              <span class="author-block">
                 <a href="https://ngxbac.github.io/">Xuan-Bac Nguyen</a><sup>1</sup>,</span>
               <span class="author-block">
                 <a href="https://nhquanqt.github.io/">Hoang-Quan Nguyen</a><sup>1,4</sup>,</span>
@@ -58,7 +61,7 @@
 
             <div class="is-size-5 publication-authors">
               <span class="author-block"><sup>1</sup>Quantum AI Lab, University of Arkansas,</span>
-              <span class="author-block"><sup>2</sup>University of Utah,</span>
+              <span class="author-block"><sup>2</sup>Department of Physics and Astronomy, University of Utah,</span>
               <span class="author-block"><sup>3</sup>Department of Physics, University of Arkansas,</span>
               <span class="author-block"><sup>4</sup>MonARK NSF Quantum Foundry</span>
             </div>
@@ -77,7 +80,7 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="./static/papers/openqlaw-agentic-ai-assistant.pdf"
+                  <a href="./static/papers/SOICT2026_OpenQlaw.pdf"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <!-- <i class="ai ai-arxiv"></i> -->
@@ -107,8 +110,8 @@
       <div class="hero-body">
         <img src="./static/images/openqlaw_framework.png" class="hero-figure" alt="OpenQlaw framework overview">
         <h2 class="subtitle has-text-centered teaser-subtitle">
-          OpenQlaw orchestrates QuPAINT as a material-domain expert, applies deterministic execution tools, and keeps
-          persistent context for practical microscopy workflows.
+          OpenQlaw delegates material characterization to QuPAINT, converts the returned observations into an
+          image-scoped record, and applies deterministic scientific operations over the identified record.
         </h2>
       </div>
     </div>
@@ -121,13 +124,26 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-             The transition from optical identification of 2D quantum materials to practical device fabrication requires dynamic reasoning past accurate detection. While recent domain-specific Multimodal Large Language Models (MLLMs) successfully ground visual features using physics-informed reasoning, their outputs are optimized for step-by-step cognitive transparency. This yields verbose candidate enumerations followed by dense reasoning that, while accurate, may induce cognitive overload and lack immediate utility for real-world interaction with researchers. </p><p>To address this challenge, we introduce OpenQlaw, an agentic orchestration system for analyzing 2D materials. The architecture is built upon NanoBot, a lightweight agentic framework inspired by OpenClaw, and QuPAINT, one of the first Physics-Aware Instruction Multi-modal platforms for Quantum Material Discovery. This allows accessibility to the lab floor via a variety of messaging channels. OpenQlaw allows the core Large Language Model (LLM) agent to orchestrate a domain-expert MLLM, with QuPAINT, as a specialized node, successfully decoupling visual identification from reasoning and deterministic image rendering.</p><p> By parsing spatial data from the expert, the agent can dynamically process user queries, such as performing scale-aware physical computation or generating isolated visual annotations, and answer in a naturalistic manner. Crucially, the system features a persistent memory that enables the agent to save physical scale ratios (e.g., 1 pixel = 0.25 &micro;m) for area computations and store sample preparation methods for efficacy comparison. 
-  The application of an agentic architecture and the extension to use the core agent as an orchestrator for domain-specific experts transforms isolated inferences into a context-aware assistant capable of accelerating high-throughput device fabrication. 
-
+              Physics-aware multimodal large language models (MLLMs) can localize and characterize two-dimensional (2D)
+              material flakes from optical microscopy images, producing rich candidate observations and scientific
+              reasoning. However, downstream workflows also require reliable operations over these outputs, including
+              counting, selection, measurement, and rendering.
             </p>
             <p>
-  The application of an agentic architecture and the extension to use the core agent as an orchestrator for domain-specific experts transforms isolated inferences into a context-aware assistant capable of accelerating high-throughput device fabrication. 
-
+              We present <b>OpenQlaw</b>, a tool-using agentic artificial intelligence (AI) system that connects a
+              general vision-language orchestrator with Physics-Aware Instruction Tuning (QuPAINT), a physics-aware
+              domain expert. Through evaluation on fully reviewed optical microscopy images, we show that summary counts
+              derived from longer free-form candidate enumerations can become inconsistent with the underlying returned
+              observations. Controlled replay experiments further show that structuring the same observations alone does
+              not resolve this behavior, while deterministic delegation returns the exact requested record count in all
+              cohort trials.
+            </p>
+            <p>
+              To address this, we introduce <b>State-Grounded OpenQlaw</b>, which converts expert outputs into
+              image-scoped observation records and performs deterministic scientific operations over explicitly
+              identified records with refusal conditions when required information is unavailable. This preserves the
+              expert's original analysis while making downstream operations exact over the selected record and
+              independently evaluable from candidate-list discrepancies.
             </p>
           </div>
         </div>
@@ -145,10 +161,11 @@
       <div class="columns is-centered is-variable is-4">
         <div class="column">
           <div class="box feature-box">
-            <h3 class="title is-5">Orchestration</h3>
+            <h3 class="title is-5">Agentic Orchestration</h3>
             <p>
-              A central vision-language agent manages the conversation, routes specialized image understanding requests to the appropriate
-              domain expert, and returns concise responses instead of exposing the full raw reasoning trace.
+              A general-purpose vision-language orchestrator interprets the researcher's request, delegates material
+              characterization to the domain expert, and routes operations over previously returned observations to
+              deterministic tools. Sessions run over WhatsApp and Discord.
             </p>
           </div>
         </div>
@@ -156,17 +173,167 @@
           <div class="box feature-box">
             <h3 class="title is-5">Material Domain Expert</h3>
             <p>
-              QuPAINT, a specialized material-domain model, produces flake-localization outputs and
-              physics-aware reasoning that OpenQlaw can parse into actionable coordinate arrays.
+              QuPAINT is kept fixed as a pinned checkpoint. It returns localized candidate flakes as whole-image
+              percentage boxes <span class="mono-inline">[x, y, w, h]</span> together with physics-aware reasoning,
+              and its original analysis is preserved without modification.
             </p>
           </div>
         </div>
         <div class="column">
           <div class="box feature-box">
-            <h3 class="title is-5">Memory</h3>
+            <h3 class="title is-5">Image-Scoped Records</h3>
             <p>
-              Structured coordinates are combined with remembered scale and sample context to compute physical area and
-              produce targeted annotations when requested.
+              Each expert response becomes an <span class="mono-inline">AnalysisRecord</span> bound to the source image
+              and reply by SHA-256 hash, with a <i>proposals</i> scope of all valid boxes and a <i>conclusion</i> scope
+              of boxes inside a well-formed final block.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box feature-box">
+            <h3 class="title is-5">Deterministic Operations</h3>
+            <p>
+              Count, Select, Rank, Measure, and Render execute over an identified record, with explicit refusals for
+              ungranted identities, unavailable layer labels, missing calibration, or identities from a different
+              image.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="findings">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Aggregation is the Limiting Factor</h2>
+          <div class="content has-text-justified result-copy">
+            <p>
+              We evaluate QuPAINT as a fixed expert on a cohort of 228 fully reviewed optical microscopy images
+              (160 WSe<sub>2</sub>, 68 WS<sub>2</sub>), drawn from a laboratory database of 7,251 fully reviewed images
+              and stratified by reviewed flake count. Candidate-list size tracks the reviewed image-level flake count
+              closely, yet the count <i>stated</i> in the free-form response frequently disagrees with the enumeration
+              in that same response. Putting a general-purpose orchestrator in front of the expert does not fix this,
+              because the orchestrator must still count in context.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered is-variable is-4">
+        <div class="column">
+          <div class="box feature-box has-text-centered">
+            <p class="stat-number">&rho; = 0.91</p>
+            <p class="stat-label">Correlation between candidate-list size and the reviewed image-level flake count</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box feature-box has-text-centered">
+            <p class="stat-number">13%</p>
+            <p class="stat-label">Of expert responses whose stated summary count agrees with its own enumeration</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box feature-box has-text-centered">
+            <p class="stat-number">6 / 60</p>
+            <p class="stat-label">In-Context OpenQlaw pilot trials matching the expert enumeration (2/60 match the
+              conclusion count)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content has-text-justified result-copy">
+        <p>
+          On the 20-image pilot, the median absolute difference from the expert enumeration is 6 observations and 43% of
+          returned counts are multiples of five &mdash; the orchestrator estimates rather than enumerates. In one trial
+          QuPAINT returns 97 candidate observations and the orchestrator reports 100.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="replay">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Delegation used to Fix Representation</h2>
+          <div class="content has-text-justified result-copy">
+            <p>
+              A matched replay isolates representation from delegation over identical archived QuPAINT observations.
+              The orchestrator receives either the raw expert response, the same validated observations as a structured
+              record, or the structured record plus access to the deterministic count operation. Record identifiers are
+              opaque and record size is withheld, so the target count is never exposed directly. Each condition
+              comprises 684 trials from 228 images across three repeated runs.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="table is-fullwidth is-hoverable result-table">
+          <thead>
+            <tr>
+              <th>Matched replay condition</th>
+              <th class="has-text-centered">Exact record count</th>
+              <th class="has-text-centered">16&ndash;20 observations</th>
+              <th class="has-text-centered">51&ndash;80 observations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Raw replay (free-form expert text)</td>
+              <td class="has-text-centered">40%</td>
+              <td class="has-text-centered">31%</td>
+              <td class="has-text-centered">4%</td>
+            </tr>
+            <tr>
+              <td>Structured replay (validated record, counted in context)</td>
+              <td class="has-text-centered">42%</td>
+              <td class="has-text-centered">15%</td>
+              <td class="has-text-centered">0%</td>
+            </tr>
+            <tr class="is-selected-row">
+              <td><b>State-Grounded OpenQlaw (deterministic delegation)</b></td>
+              <td class="has-text-centered"><b>684 / 684</b></td>
+              <td class="has-text-centered"><b>100%</b></td>
+              <td class="has-text-centered"><b>100%</b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="content has-text-justified result-copy">
+        <p>
+          The paired improvement of deterministic delegation over structured replay is <b>+0.58</b> with a 95% bootstrap
+          interval of [0.52, 0.64] over 10,000 seeded samples. Structured representation improves over raw replay by
+          only <b>+0.02</b>, interval [&minus;0.03, 0.08]. In-context counting degrades sharply beyond roughly 15
+          observations and longer records increasingly yield estimates: for 31&ndash;50 observations the median
+          returned-to-record ratio is 1.04 (raw) and 0.92 (structured), falling to 0.95 and 0.85 at 51&ndash;80
+          observations. State-Grounded OpenQlaw remains exact across every record-size group and for both
+          WSe<sub>2</sub>
+          and WS<sub>2</sub>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="implementation">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Implementation</h2>
+          <div class="content has-text-justified result-copy">
+            <p>
+              OpenQlaw is built on <a href="https://github.com/HKUDS/nanobot">NanoBot</a>, a lightweight open-source
+              agent framework inspired by <a href="https://github.com/openclaw/openclaw">OpenClaw</a>. The orchestrator
+              is Qwen3-VL-32B-Instruct at a fixed model revision, served with vLLM in bfloat16 with a 32K context
+              window; QuPAINT is served independently through FastAPI and exposed over the Model Context Protocol (MCP),
+              on a separate GPU. QuPAINT is registered as <span class="mono-inline">get_flake_data</span>,
+              <span class="mono-inline">draw_specific_flakes</span> renders selected observations, and
+              <span class="mono-inline">openqlaw_scientific_record</span> provides deterministic access to the
+              image-scoped records. Campaigns use frozen prompts and SHA-256 image manifests with write-once traces; no
+              semantic retries are performed.
             </p>
           </div>
         </div>
@@ -178,7 +345,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Qualitative Comparisons</h2>
+          <h2 class="title is-3">Qualitative Comparison</h2>
         </div>
       </div>
 
@@ -190,8 +357,8 @@
               <img src="./static/images/quPAINT_results.png" alt="QuPAINT baseline result">
             </figure>
             <p class="result-caption">
-              QuPAINT identifies flakes, but the direct output is verbose and filled with raw coordinate arrays and
-              broad visual overlays that require extra manual interpretation.
+              QuPAINT localizes candidate flakes with physics-aware reasoning, but the direct response is a long
+              free-form enumeration of coordinates from which exact quantities must still be inferred.
             </p>
           </div>
         </div>
@@ -210,8 +377,9 @@
               </figure>
             </div>
             <p class="result-caption">
-              OpenQlaw returns a concise breakdown first, computes approximate area from cached coordinates, and then
-              draws a box only after the user asks to see the monolayer.
+              OpenQlaw answers from the image-scoped record: counting and ranking run as deterministic operations,
+              bounding-box area is converted to &micro;m<sup>2</sup> using the calibration bound to that image, and a
+              box is drawn only for the object identifier the user explicitly asks to see.
             </p>
           </div>
         </div>
@@ -223,12 +391,14 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Memory And Physical Calculations</h2>
+          <h2 class="title is-3">Persistent Context And Calibrated Measurement</h2>
           <div class="content has-text-justified result-copy">
             <p>
-              OpenQlaw stores imaging metadata and sample preparation notes as persistent context. Once the user gives a
-              physical scale, the system can reuse it in later turns to convert pixel-space detections into real
-              micrometer-based measurements and grounded follow-up responses.
+              The deployed system runs over WhatsApp and Discord, retaining the active image, the returned
+              observations, and experimental metadata across turns. Once the researcher supplies a physical scale, the
+              calibration stays bound to that image and is reused to convert bounding-box extents into micrometer
+              measurements. Reported measurements refer to bounding-box area rather than segmented flake area, and the
+              tool refuses when calibration for the requested image is unavailable.
             </p>
           </div>
         </div>
@@ -268,8 +438,25 @@
             <a href="https://www.sankalppandey.tech/" class="icon has-text-dark" title="Website">
               <i class="fas fa-globe"></i>
             </a>
-            <a href="https://scholar.google.com/citations?user=ax7YxjwAAAAJ&amp;hl=en"
-              class="icon has-text-dark" title="Google Scholar">
+            <a href="https://scholar.google.com/citations?user=ax7YxjwAAAAJ&amp;hl=en" class="icon has-text-dark"
+              title="Google Scholar">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="column is-3-desktop is-4-tablet has-text-centered">
+          <figure class="image is-128x128 team-avatar">
+            <img class="is-rounded" src="./static/images/team/thanhdattruong.jpeg" alt="Thanh-Dat Truong">
+          </figure>
+          <h4 class="title is-5 mt-4 mb-1">Thanh-Dat Truong</h4>
+          <p class="is-size-7 has-text-grey">University of Arkansas</p>
+          <div class="team-links">
+            <a href="https://truongthanhdat.github.io/" class="icon has-text-dark" title="Website">
+              <i class="fas fa-globe"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=qrmxykkAAAAJ&hl=en" class="icon has-text-dark"
+              title="Google Scholar">
               <i class="ai ai-google-scholar"></i>
             </a>
           </div>
@@ -285,8 +472,7 @@
             <a href="https://ngxbac.github.io/" class="icon has-text-dark" title="Website">
               <i class="fas fa-globe"></i>
             </a>
-            <a
-              href="https://scholar.google.com/citations?hl=en&amp;user=UUPllH4AAAAJ&amp;view_op=list_works&amp;sortby=pubdate"
+            <a href="https://scholar.google.com/citations?hl=en&amp;user=UUPllH4AAAAJ&amp;view_op=list_works&amp;sortby=pubdate"
               class="icon has-text-dark" title="Google Scholar">
               <i class="ai ai-google-scholar"></i>
             </a>
@@ -303,13 +489,16 @@
             <a href="https://nhquanqt.github.io/" class="icon has-text-dark" title="Website">
               <i class="fas fa-globe"></i>
             </a>
-            <a href="https://scholar.google.com/citations?user=J414r4kAAAAJ&amp;hl=en"
-              class="icon has-text-dark" title="Google Scholar">
+            <a href="https://scholar.google.com/citations?user=J414r4kAAAAJ&amp;hl=en" class="icon has-text-dark"
+              title="Google Scholar">
               <i class="ai ai-google-scholar"></i>
             </a>
           </div>
         </div>
 
+      </div>
+
+      <div class="columns is-centered is-multiline mt-5">
         <div class="column is-3-desktop is-4-tablet has-text-centered">
           <figure class="image is-128x128 team-avatar">
             <img class="is-rounded" src="./static/images/team/timfaltermeier.webp" alt="Tim Faltermeier">
@@ -322,9 +511,6 @@
             </a>
           </div>
         </div>
-      </div>
-
-      <div class="columns is-centered is-multiline mt-5">
         <div class="column is-3-desktop is-4-tablet has-text-centered">
           <figure class="image is-128x128 team-avatar">
             <img class="is-rounded" src="./static/images/team/nicholasborys.webp" alt="Nicholas Borys">
@@ -335,8 +521,8 @@
             <a href="https://www.boryslab.com/people-1" class="icon has-text-dark" title="Website">
               <i class="fas fa-globe"></i>
             </a>
-            <a href="https://scholar.google.com/citations?user=AA4JNhMAAAAJ&amp;hl=en"
-              class="icon has-text-dark" title="Google Scholar">
+            <a href="https://scholar.google.com/citations?user=AA4JNhMAAAAJ&amp;hl=en" class="icon has-text-dark"
+              title="Google Scholar">
               <i class="ai ai-google-scholar"></i>
             </a>
           </div>
@@ -353,8 +539,8 @@
               class="icon has-text-dark" title="Website">
               <i class="fas fa-globe"></i>
             </a>
-            <a href="https://scholar.google.com/citations?user=mTz6GK0AAAAJ&amp;hl=en"
-              class="icon has-text-dark" title="Google Scholar">
+            <a href="https://scholar.google.com/citations?user=mTz6GK0AAAAJ&amp;hl=en" class="icon has-text-dark"
+              title="Google Scholar">
               <i class="ai ai-google-scholar"></i>
             </a>
           </div>
@@ -367,13 +553,12 @@
           <h4 class="title is-5 mt-4 mb-1">Khoa Luu</h4>
           <p class="is-size-7 has-text-grey">University of Arkansas</p>
           <div class="team-links">
-            <a
-              href="https://engineering.uark.edu/electrical-engineering-computer-science/electrical-engineering-faculty/uid/khoaluu/name/Khoa+Luu/"
+            <a href="https://engineering.uark.edu/electrical-engineering-computer-science/electrical-engineering-faculty/uid/khoaluu/name/Khoa+Luu/"
               class="icon has-text-dark" title="Website">
               <i class="fas fa-globe"></i>
             </a>
-            <a href="https://scholar.google.com/citations?user=JPAl8-gAAAAJ&amp;hl=en"
-              class="icon has-text-dark" title="Google Scholar">
+            <a href="https://scholar.google.com/citations?user=JPAl8-gAAAAJ&amp;hl=en" class="icon has-text-dark"
+              title="Google Scholar">
               <i class="ai ai-google-scholar"></i>
             </a>
           </div>
@@ -421,7 +606,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="./static/papers/openqlaw-agentic-ai-assistant.pdf">
+        <a class="icon-link" href="./static/papers/SOICT2026_OpenQlaw.pdf">
           <i class="fas fa-file-pdf"></i>
         </a>
       </div>
