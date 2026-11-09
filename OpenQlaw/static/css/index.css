@@ -173,6 +173,13 @@ body {
   height: 100%;
 }
 
+.feature-box {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0.75rem 0.5rem;
+}
+
 .result-box-plain {
   background: transparent;
   box-shadow: none;
@@ -233,4 +240,43 @@ body {
   .memory-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.mono-inline {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.92em;
+  background: #f5f5f7;
+  border-radius: 4px;
+  padding: 0.05em 0.3em;
+}
+
+.stat-number {
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #363636;
+  margin-bottom: 0.5rem !important;
+}
+
+.stat-label {
+  color: #4a4a4a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.result-table {
+  background: transparent;
+}
+
+.result-table th {
+  font-size: 0.95rem;
+  vertical-align: bottom;
+}
+
+.result-table td {
+  vertical-align: middle;
+}
+
+.result-table tr.is-selected-row td {
+  background-color: #f0f4fb;
 }

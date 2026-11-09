@@ -866,7 +866,7 @@ p.gallery-title { margin-top: -0.2rem; }
 }
 .qf-stat {
   padding: 0.95rem 0.6rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #ffffff;
   border-radius: 10px;
   text-align: center;
 }
@@ -882,7 +882,7 @@ p.gallery-title { margin-top: -0.2rem; }
 .qf-lab {
   display: block;
   margin-top: 0.2rem;
-  color: #6b7280;
+  color: #000000;
   font-size: 0.76rem;
   letter-spacing: 0.03em;
 }
@@ -899,8 +899,8 @@ p.gallery-title { margin-top: -0.2rem; }
 .qf-table th:first-child,
 .qf-table td:first-child { text-align: left; }
 .qf-table thead th {
-  border-bottom: 2px solid #d1d5db;
-  color: #374151;
+  border-bottom: 2px solid #000000;
+  color: #000000;
   font-family: 'Google Sans', sans-serif;
   font-size: 0.76rem;
   letter-spacing: 0.05em;
@@ -909,7 +909,7 @@ p.gallery-title { margin-top: -0.2rem; }
 .qf-table tbody tr { border-bottom: 1px solid #f3f4f6; }
 .qf-table tbody tr:hover { background: #fafafa; }
 .qf-table tfoot td {
-  border-top: 2px solid #d1d5db;
+  border-top: 2px solid #000000;
   font-weight: 700;
 }
 
