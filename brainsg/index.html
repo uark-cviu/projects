@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="BrainSG: Beyond Object to Relation Understanding via Multimodal Vision-Brain Scene Graph Generation.">
+  <meta name="keywords" content="vision-brain, scene-graph">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BrainSG: Beyond Object to Relation Understanding via Multimodal Vision-Brain Scene Graph Generation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/cviu-favicon.ico" type="image/x-icon">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script defer src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <button type="button" class="navbar-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+  <div class="navbar-menu" id="site-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://uark-cviu.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">BrainSG: Beyond Object to Relation Understanding via Multimodal Vision-Brain Scene Graph Generation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://nhquanqt.github.io/">Hoang-Quan Nguyen</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Quyen-Nang Bui</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://bmcl.korea.ac.kr/author/suhyun-kim/">Suhyun Kim</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://bmcl.korea.ac.kr/author/hojin-jang/">Hojin Jang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=JPAl8-gAAAAJ&hl=en">Khoa Luu</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Arkansas, AR, USA,</span>
+            <span class="author-block"><sup>2</sup>Korea University, Seoul, South Korea</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-widescreen">
+    <div class="hero-body">
+      <figure>
+        <a id="teaser" class="teaser-image" href="./static/images/motivation.png"
+           aria-label="Open the full-size comparison of prior brain decoding and BrainSG's directed scene graph">
+          <img src="./static/images/motivation.png" width="1664" height="936"
+               alt="Prior vision-brain decoding reconstructs the scene and describes a person with a chair. BrainSG shows the person sitting on the chair and holding a bottle in a directed scene graph.">
+        </a>
+        <figcaption class="subtitle has-text-centered mt-4">
+          BrainSG decodes directed relationships between objects in a viewed scene from fMRI and EEG signals.
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Decoding scene structure from brain activity requires recovering not only which objects are present, but also how they relate.
+          Existing brain-decoding benchmarks mainly evaluate reconstructed images or videos, predicted object categories, captions, or global image-text embeddings.
+          These evaluations can show that a decoder recovers the objects and general meaning of a scene, but they do not explicitly evaluate whether two objects are connected by the correct predicate, whether the relation is reversed, or whether its roles are assigned to the correct object instances.
+          To address this gap, we first introduce <i>BrainSG-Bench</i>, a new structured vision-brain scene-graph dataset and evaluation benchmark.
+          It provides two forms of structured relational supervision that prior brain-decoding benchmarks lack: human-audited directed scene graphs and neuroscience-expert annotations of hypothesized cognitive functions and regional involvement.
+          BrainSG-Bench supports three complementary tasks: graph retrieval, relation decoding with known objects, and complete scene-graph generation.
+          In addition, to address limited paired supervision and variable signal reliability, we propose <i>BrainSG</i>, a brain-to-graph model with noise-adaptive prior attention.
+          The model represents fMRI signals as ROI tokens and estimates ROI-token reliability directly from the input brain signals during inference, adapting predicate-conditioned attention guided by a fixed predicate-to-ROI prior.
+          On BrainSG-Bench, BrainSG achieves 45.6% Recall@5 for graph retrieval and triplet F1 scores of 57.4% for relation decoding with known objects and 31.1% for scene-graph generation.
+          Together, BrainSG-Bench and BrainSG establish a new framework for studying how structured supervision of brain signals can support relational decoding.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column" id="brainsg-bench">
+        <div class="content">
+          <h2 class="title is-3" id="brainsg-bench-title">BrainSG-Bench</h2>
+          <p>
+            BrainSG-Bench pairs synchronized fMRI and EEG responses to four-second CineBrain clips with
+            human-audited scene graphs. Each graph identifies the objects in the scene and records who
+            or what fills each role in a directed relationship. Neuroscience experts also annotate
+            possible cognitive processes and brain regions involved in each relationship.
+          </p>
+          <figure class="image mx-0">
+            <a class="is-block" href="./static/images/brainsg_bench.png" aria-label="Open the full-size BrainSG-Bench figure">
+              <img src="./static/images/brainsg_bench.png" width="4354" height="2025" loading="lazy"
+                   alt="BrainSG-Bench annotations show a scene graph linked to objects in a video frame, descriptions of brain regions, and expert hypotheses about which regions may support a person holding a bottle.">
+            </a>
+            <figcaption class="has-text-centered mt-3">
+              A benchmark example with object instances, directed relations, and expert hypotheses about regional involvement.
+            </figcaption>
+          </figure>
+          <h3 class="title is-4">Evaluation tasks</h3>
+          <ul>
+            <li><strong>Graph retrieval.</strong> Rank the correct graph among candidates that can contain the same objects with different relations.</li>
+            <li><strong>Relation decoding with known objects.</strong> Predict directed relations between supplied object instances.</li>
+            <li><strong>Complete scene-graph generation.</strong> Predict both object instances and their directed relations from brain responses.</li>
+          </ul>
+
+          <section class="mt-5" id="data-analysis" aria-labelledby="data-analysis-title">
+            <h3 class="title is-4" id="data-analysis-title">Data Analysis</h3>
+            <p>
+              BrainSG-Bench contains both common and rare object classes and relation predicates.
+              Both charts use a logarithmic count axis to show how often each class appears.
+            </p>
+            <fieldset class="data-analysis-charts">
+              <legend class="is-sr-only">Choose a class distribution</legend>
+              <input class="is-sr-only" type="radio" name="analysis-chart" id="object-classes" checked>
+              <label class="button" for="object-classes">Object classes</label>
+              <input class="is-sr-only" type="radio" name="analysis-chart" id="predicate-classes">
+              <label class="button" for="predicate-classes">Relation predicates</label>
+
+              <div class="data-analysis-scroll data-analysis-objects mt-3" tabindex="0" role="region" aria-label="Object-class distribution">
+                <div class="data-analysis-crop">
+                  <img src="./static/images/data_analysis.png" width="2566" height="1764" loading="lazy"
+                       alt="Object counts vary by several orders of magnitude. Person and book are the most frequent classes shown.">
+                </div>
+              </div>
+              <div class="data-analysis-scroll data-analysis-predicates mt-3" tabindex="0" role="region" aria-label="Predicate-class distribution">
+                <div class="data-analysis-crop">
+                  <img src="./static/images/data_analysis.png" width="2566" height="1764" loading="lazy"
+                       alt="Relation counts vary by several orders of magnitude. On, looking at, and next to are the most frequent predicates shown.">
+                </div>
+              </div>
+            </fieldset>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column" id="brainsg">
+        <div class="content">
+          <h2 class="title is-3">BrainSG</h2>
+          <p>
+            BrainSG decodes directed scene graphs from fMRI and EEG. Separate encoders represent fMRI
+            activity by brain region and extract temporal features from EEG. For each relation query,
+            noise-adaptive prior attention uses estimated fMRI signal reliability to balance the measured
+            evidence with a learned prior over brain regions. The model fuses the resulting fMRI features
+            with EEG features to predict objects and their directed relationships or rank candidate graphs.
+          </p>
+          <figure class="image mx-0">
+            <a class="is-block" href="./static/images/overview_framework.png" aria-label="Open the full-size BrainSG framework figure">
+              <img src="./static/images/overview_framework.png" width="4335" height="1737" loading="lazy"
+                   alt="BrainSG encodes fMRI and EEG separately, fuses features for each relation query, and uses them to retrieve, decode, or generate scene graphs.">
+            </a>
+            <figcaption class="has-text-centered mt-3">
+              The BrainSG framework, from neural encoding through relation-conditioned fusion to graph prediction.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width" id="publications">
+        <h2 class="title is-3">Publications</h2>
+
+        <div class="content">
+          <p>
+            [1] Xuan-Bac Nguyen, Manuel Serna-Aguilera, Arabinda Kumar Choudhary, Pawan Sinha, Xin Li, and Khoa Luu.
+            <a href="https://link.springer.com/article/10.1007/s11263-025-02617-x">COBRA: A Continual Learning Approach to Vision-Brain Understanding</a>.
+            <cite>International Journal of Computer Vision (IJCV)</cite>, 2026.
+          </p>
+          <p>
+            [2] Xuan Bac Nguyen, Hojin Jang, Xin Li, Samee U. Khan, Pawan Sinha, and Khoa Luu.
+            <a href="https://ieeexplore.ieee.org/abstract/document/11175035">BRACTIVE: A Brain Activation Approach to Human Visual Brain Learning</a>.
+            <cite>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</cite>, 2026.
+          </p>
+          <p>
+            [3] Xuan-Bac Nguyen, Thanh-Dat Truong, Pawan Sinha, and Khoa Luu.
+            <a href="https://arxiv.org/abs/2508.18187">BRAIN: Bias-Mitigation Continual Learning Approach to Vision-Brain Understanding</a>.
+            Under review.
+          </p>
+          <p>
+            [4] Xuan-Bac Nguyen, Xin Li, Pawan Sinha, Samee U. Khan, and Khoa Luu.
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0925231224019842">Brainformer: Mimic human visual brain functions to machine vision models via fMRI</a>.
+            <cite>Neurocomputing</cite>, 2025.
+          </p>
+          <p>
+            [5] Hoang-Quan Nguyen, Xuan-Bac Nguyen, Hugh Churchill, Arabinda Kumar Choudhary, Pawan Sinha, Samee U. Khan, and Khoa Luu.
+            <a href="https://arxiv.org/abs/2411.13378">Quantum-Brain: Quantum-Inspired Neural Network Approach to Vision-Brain Understanding</a>.
+            Under review.
+          </p>
+          <p>
+            [6] Xuan-Bac Nguyen, Hoang-Quan Nguyen, Hugh Churchill, Samee U. Khan, and Khoa Luu.
+            <a href="https://ieeexplore.ieee.org/abstract/document/10768223">Hierarchical Quantum Control Gates for Functional MRI Understanding</a>.
+            <cite>IEEE Workshop on Signal Processing Systems (SiPS)</cite>, 2024.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This site adapts the <a href="https://nerfies.github.io/">Nerfies website template</a>.
+            The adapted template is licensed under
+            <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

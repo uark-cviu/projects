@@ -1,0 +1,87 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.navbar-burger {
+  background: none;
+  border: 0;
+}
+
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.teaser > .container { width: 100%; }
+
+.teaser-image { display: block; }
+
+.teaser-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.data-analysis-charts { min-inline-size: 0; }
+
+.data-analysis-charts input:checked + label {
+  background-color: #363636;
+  border-color: #363636;
+  color: #fff;
+}
+
+.data-analysis-charts input:focus-visible + label {
+  outline: 2px solid #3273dc;
+  outline-offset: 2px;
+}
+
+.data-analysis-scroll { overflow-x: auto; }
+
+.data-analysis-crop {
+  position: relative;
+  min-width: 38rem;
+  aspect-ratio: 2566 / 908;
+  overflow: hidden;
+}
+
+.data-analysis-crop img {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Align the chart headings within equal-height crops, using source-pixel offsets. */
+.data-analysis-objects img { top: calc(-100% * 4 / 908); }
+.data-analysis-predicates img { top: calc(-100% * 891 / 908); }
+
+.data-analysis-predicates,
+#predicate-classes:checked ~ .data-analysis-objects { display: none; }
+#predicate-classes:checked ~ .data-analysis-predicates { display: block; }
+
+.publication-title,
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors a {
+  color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
